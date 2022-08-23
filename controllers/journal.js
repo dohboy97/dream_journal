@@ -1,9 +1,9 @@
-const journal = require('../models/journal')
+const Journal = require('../models/journal')
 
 module.exports = {
     getDream: async (req,res)=>{
         try{
-            const dreamEntry = await journal.find()
+            const dreamEntry = await Journal.find()
             res.render('journal.ejs', {dreams: dreamEntry})
         }catch(err){
             console.log(err)
@@ -12,9 +12,10 @@ module.exports = {
 
     createDream: async (req,res)=>{
         try{
-            await journal.create({dream: req.body.dreamEntry})
+            await Journal.create({dream: req.body.dreamEntry, completed: true})
             //will add date functionality afterwards
-            console.log('Dream has been added')
+            console.log('sent')
+            console.log(req.body.dreamEntry)
             res.redirect('/journal')
         }catch(err){
             console.log(err)

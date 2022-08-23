@@ -22,8 +22,8 @@
 
         <ul>
             <% dreams.forEach( el => { %>
-                <li class='dreamEntry' data-id='<%=el._id%>'>
-                    
+                <li class='dream' data-id='<%=el._id%>'>
+                    <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.dream %></span>
                     <span class='del'> Delete </span>
                 </li>
             <% }) %>    

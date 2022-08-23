@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 body{
-    background-image: url('../imgs/starrySky.jpg');
-}
+    background-image: url('../public/imgs/cartoon1.jpg');
+    background-repeat: no-repeat;
+ min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  }

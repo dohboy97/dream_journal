@@ -551,15 +551,41 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.text-blue-900 {
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.h-96 {
+  height: 24rem;
+}
+
+.rounded-md {
+  border-radius: 0.375rem;
+}
+
+.bg-indigo-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(129 140 248 / var(--tw-bg-opacity));
+}
+
+.p-5 {
+  padding: 1.25rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
+}
+
+.text-amber-400 {
   --tw-text-opacity: 1;
-  color: rgb(30 58 138 / var(--tw-text-opacity));
+  color: rgb(251 191 36 / var(--tw-text-opacity));
 }
 
 body{
-  background-image: url('../public/imgs/starrySky.jpg');
-  background-size: cover;
+  background-image: url('../public/imgs/cartoon1.jpg');
   background-repeat: no-repeat;
   min-height: 100vh;
+  background-size: cover;
+  background-position: center;
 }
-

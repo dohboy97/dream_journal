@@ -7,7 +7,7 @@ const journalRoute = require('./routes/journal')
 
 require('dotenv').config({path: './config/.env'})
 
-// connectDB()
+connectDB()
 
 app.set('view engine', 'ejs')
 

@@ -2,7 +2,7 @@ const express = require ('express');
 const app = express()
 const connectDB = require('./config/database')
 const homeRoute = require('./routes/home')
-// const journalRoute = require('./routes/journal')
+const journalRoute = require('./routes/journal')
 
 
 require('dotenv').config({path: './config/.env'})
@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 app.use('/', homeRoute)
-// app.use('/journal', journalRoute)
+app.use('/journal', journalRoute)
 
  
 app.listen(process.env.PORT, ()=>{

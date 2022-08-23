@@ -20,5 +20,16 @@ module.exports = {
         }catch(err){
             console.log(err)
         }
-    }
+    },
+
+    deleteDream: async (req,res)=>{
+        console.log(req.body.dreamIdFromJSFile)
+        try{
+            await Journal.findOneAndDelete({_id: req.body.dreamIdFromJSFile})
+            console.log('Deleted Dream')
+            res.json('Deleted it')
+        }catch(err){
+        console.log(err)
+    } 
+}
 }

@@ -9,4 +9,6 @@ router.get('/', journalController.getDream)
 
 router.post('/createDream', journalController.createDream)
 
+router.delete('/deleteDream', journalController.deleteDream)
+
 module.exports = router

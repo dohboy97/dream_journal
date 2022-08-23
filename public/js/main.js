@@ -1,6 +1,6 @@
 const delBtn = document.querySelectorAll('.del')
 
-Array.from(delbtn).forEach(element=>{
+Array.from(delBtn).forEach(element=>{
     element.addEventListener('click',deleteDream)
 })
 
@@ -9,7 +9,7 @@ Array.from(delbtn).forEach(element=>{
 
 
 
-async function deletedream(){
+async function deleteDream(){
     const dreamId = this.parentNode.dataset.id 
     try{
         const response = await fetch ('journal/deleteDream', {

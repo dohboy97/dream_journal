@@ -15,7 +15,7 @@
         <h2>Journal entry</h2>
         <form action = '/journal/createDream' method = 'POST'>
             <input type = 'text' placeholder = 'Describe your dream' name = 'dreamEntry'>
-            <button type = 'submit'>Submit</button>
+            <button class = 'bg-amber-400' type = 'submit'>Submit</button>
         </form>
 
         <h3>Previous Dreams</h3>
@@ -24,7 +24,8 @@
             <% dreams.forEach( el => { %>
                 <li class='dream' data-id='<%=el._id%>'>
                     <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.dream %></span>
-                    <span class='del'> Delete </span>
+                    <span class='del text-amber-400'> Delete </span>
+                  
                 </li>
             <% }) %>    
             </ul>

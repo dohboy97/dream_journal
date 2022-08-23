@@ -12,6 +12,24 @@
     <main class = 'mx-auto bg-indigo-400 h-96 rounded-md p-1'>
         <h1 class = 'text-amber-400'>Welcome to the Dream Journal Entry Page</h1>
         
+        <h2>Journal entry</h2>
+        <form action = '/journal/createDream' method = 'POST'>
+            <input type = 'text' placeholder = 'Describe your dream' name = 'dreamEntry'>
+            <button type = 'submit'>Submit</button>
+        </form>
+
+        <h3>Previous Dreams</h3>
+
+        <ul>
+            <% dreams.forEach( el => { %>
+                <li class='dreamEntry' data-id='<%=el._id%>'>
+                    
+                    <span class='del'> Delete </span>
+                </li>
+            <% }) %>    
+            </ul>
+
     </main>
+    <script src = 'js/main.js'></script>
 </body>
 </html>

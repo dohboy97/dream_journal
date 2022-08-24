@@ -1,3 +1,7 @@
+import path from 'path';
+import {fileURLToPath} from 'url';
+const __dirname = path.dirname(__filename);
+
 const delBtn = document.querySelectorAll('.del')
 
 Array.from(delBtn).forEach(element=>{
@@ -12,7 +16,7 @@ Array.from(delBtn).forEach(element=>{
 async function deleteDream(){
     const dreamId = this.parentNode.dataset.id 
     try{
-        const response = await fetch ('journal/deleteDream', {
+        const response = await fetch (__dirname + '/journal/deleteDream', {
             method:'delete',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({

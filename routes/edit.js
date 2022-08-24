@@ -4,7 +4,7 @@ const { append } = require('express/lib/response')
 const router = express.Router()
 const editController = require('../controllers/edit')
 
-router.get('/', editController.getDreamById)
+router.get('/:id', editController.getDreamById)
 
 router.delete('/deleteDream', editController.deleteDream)
 

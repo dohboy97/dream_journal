@@ -14,7 +14,7 @@ Array.from(delBtn).forEach(element=>{
 async function deleteDream(){
     const dreamId = this.parentNode.dataset.id 
     try{
-        const response = await fetch (__dirname + '/journal/deleteDream', {
+        const response = await fetch ('/journal/deleteDream', {
             method:'delete',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
@@ -23,7 +23,7 @@ async function deleteDream(){
         })
         const data = await response.json()
         console.log(data)
-        location.reload()
+        
     }catch(err){
         console.log(err)
     }

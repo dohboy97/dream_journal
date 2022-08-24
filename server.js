@@ -20,7 +20,7 @@ app.use(express.json())
 
 app.use('/', homeRoute)
 app.use('/journal', journalRoute)
-app.use('journal/edit', editRoute)
+app.use('/journal/edit', editRoute)
 
  
 app.listen(process.env.PORT, ()=>{

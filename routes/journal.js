@@ -12,7 +12,7 @@ router.post('/createDream', journalController.createDream)
 
 router.delete('/deleteDream', journalController.deleteDream)
 
-router.get('/:id', journalController.getDreamById)
+router.get('/edit/:id', journalController.getDreamById)
  
 router.put('/:id', journalController.updateDreamById)
 

@@ -3,6 +3,7 @@ const app = express()
 const connectDB = require('./config/database')
 const homeRoute = require('./routes/home')
 const journalRoute = require('./routes/journal')
+
 const bodyParser = require('body-parser')
 
 require('dotenv').config({path: './config/.env'})

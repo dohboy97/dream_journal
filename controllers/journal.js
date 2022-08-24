@@ -30,6 +30,10 @@ module.exports = {
             res.json('Deleted it')
         }catch(err){
         console.log(err)
-    } 
-}
+        } 
+    },
+
+    updateDream: async (req,res)=>{
+        console.log(req)
+    }
 }

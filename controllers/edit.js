@@ -8,10 +8,12 @@ module.exports = {
         try{
             await Journal.findOneAndDelete({_id: req.body.dreamIdFromJSFile})
             console.log('Deleted Dream')
-            res.json('Deleted it')
+            res.redirect('/journal')
+            
         }catch(err){
         console.log(err)
         } 
+        
     },
 
     getDreamById: async(req,res)=>{

@@ -23,7 +23,8 @@ async function deleteDream(){
         })
         const data = await response.json()
         console.log(data)
-        
+        window.location.reload()
+        window.location.href = '/journal'
     }catch(err){
         console.log(err)
     }

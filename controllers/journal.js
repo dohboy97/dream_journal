@@ -33,21 +33,5 @@ module.exports = {
         } 
     },
 
-    getDreamById: async(req,res)=>{
-        
-        try{
-            const dreamEntry = await Journal.findOne({
-                
-                _id: req.params.id
-            })
-            console.log(dreamEntry)
-            res.render('journal/edit.ejs', {dreams:dreamEntry})
-        }catch(err){
-            console.log(err)
-        }
-    },
-
-    updateDreamById: async (req,res)=>{
-        console.log(req)
-    }
+    
 }

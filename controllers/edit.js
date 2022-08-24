@@ -16,16 +16,17 @@ module.exports = {
 
     getDreamById: async(req,res)=>{
         
-        try{
-            const dreamEntry = await Journal.findOne({
+        res.render('edit.ejs')
+        // try{
+        //     const dreamEntry = await Journal.findOne({
                 
-                _id: req.params.id
-            })
-            console.log(dreamEntry)
-            res.render('edit.ejs', {dreams:dreamEntry})
-        }catch(err){
-            console.log(err)
-        }
+        //         _id: req.params.id
+        //     })
+        //     console.log(dreamEntry)
+        //     res.render('edit.ejs', {dreams:dreamEntry})
+        // }catch(err){
+        //     console.log(err)
+        // }
     },
 
     updateDreamById: async (req,res)=>{

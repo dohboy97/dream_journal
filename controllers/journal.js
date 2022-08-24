@@ -33,7 +33,7 @@ module.exports = {
         } 
     },
 
-    updateDream: async (req,res)=>{
+    updateDreamById: async (req,res)=>{
         console.log(req)
     }
 }

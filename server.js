@@ -3,6 +3,7 @@ const app = express()
 const connectDB = require('./config/database')
 const homeRoute = require('./routes/home')
 const journalRoute = require('./routes/journal')
+const editRoute = require ('./routes/edit')
 
 const bodyParser = require('body-parser')
 
@@ -19,6 +20,7 @@ app.use(express.json())
 
 app.use('/', homeRoute)
 app.use('/journal', journalRoute)
+app.use('journal/edit', editRoute)
 
  
 app.listen(process.env.PORT, ()=>{

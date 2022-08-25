@@ -13,7 +13,7 @@ connectDB()
 
 app.set('view engine', 'ejs')
 
-app.use(express.static('/public'))
+app.use(express.static('public'))
 //issue here
 
 app.use(express.urlencoded({ extended: true }))
@@ -27,4 +27,4 @@ app.use('/journal/edit', editRoute)
  
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better catch it!')
-})    
+})     

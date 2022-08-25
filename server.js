@@ -4,6 +4,8 @@ const connectDB = require('./config/database')
 const homeRoute = require('./routes/home')
 const journalRoute = require('./routes/journal')
 const editRoute = require ('./routes/edit')
+const nocache = require('nocache')
+app.use(nocache())
 
 const bodyParser = require('body-parser')
 
@@ -18,6 +20,7 @@ app.use(express.static('public'))
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+
 
 
 app.use('/', homeRoute)

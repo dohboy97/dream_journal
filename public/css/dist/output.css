@@ -582,6 +582,10 @@ video {
   height: 75%;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .rounded-md {
   border-radius: 0.375rem;
 }

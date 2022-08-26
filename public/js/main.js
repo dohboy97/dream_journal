@@ -13,22 +13,28 @@ Array.from(editBtn).forEach(element=>{
 })
 
 
+Array.from(updateBtn).forEach(element=>{
+    element.addEventListener('click',updateDream)
+})
 
-// async function editDream(){
-//     const dreamID = this.parentNode.dataset.id
-//     try{
-//         const response = await fetch(`/journal/edit/${dreamID}`,{
-//             method:'put',
-            
-//         })
-//         const data = await response.json()
-//         console.log(data)
-     
-//     }catch(err){
-//         console.log(err)
-//     }
-// }
-
+async function updateDream(){
+    const dreamId = this.parentNode.dataset.id
+    try{
+        const response = await fetch(`/journal/edit/${dreamId}/update`, {
+            method: 'put',
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify({
+                'dreamIdIdFromJSFile':dreamId
+            })
+        })
+        const data = await response.json()
+        console.log(data)
+        window.location.reload()
+        window.location.href = '/journal'
+    }catch(err){
+        console.log(err)
+    }
+}
 
 async function deleteDream(){
     const dreamId = this.parentNode.dataset.id 

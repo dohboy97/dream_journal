@@ -10,6 +10,6 @@ router.delete('/deleteDream', editController.deleteDream)
 
 
  
-router.put('/:id', editController.updateDreamById)
+router.put('/:id/update', editController.updateDreamById)
 
 module.exports = router

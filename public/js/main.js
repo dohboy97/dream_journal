@@ -4,6 +4,8 @@ const delBtn = document.querySelectorAll('.del')
 
 const editBtn = document.querySelectorAll('.edit')
 
+const updateBtn = document.querySelectorAll('.updateBtn')
+
 Array.from(delBtn).forEach(element=>{
     element.addEventListener('click',deleteDream)
 })
@@ -14,10 +16,10 @@ Array.from(editBtn).forEach(element=>{
 
 
 Array.from(updateBtn).forEach(element=>{
-    element.addEventListener('click',updateDream)
+    element.addEventListener('click',updateDreamById)
 })
 
-async function updateDream(){
+async function updateDreamById(){
     const dreamId = this.parentNode.dataset.id
     try{
         const response = await fetch(`/journal/edit/${dreamId}/update`, {

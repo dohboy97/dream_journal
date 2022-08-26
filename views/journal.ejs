@@ -27,6 +27,7 @@
                 <li class='dream' data-id='<%=el._id%>'>
                     <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.dream %></span>
                     <span class='del text-amber-400'> Delete </span>
+                    <a href = '/journal/edit/<%=el._id%>'class = 'edit text-amber-400'>Edit</a>
                   
                 </li>
             <% }) %>    

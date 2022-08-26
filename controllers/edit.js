@@ -24,6 +24,7 @@ module.exports = {
             })
             console.log(dreamEntry)
             res.render('edit.ejs', {dreams:dreamEntry})
+            
         }catch(err){
             console.log(err)
         }

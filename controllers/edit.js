@@ -31,7 +31,16 @@ module.exports = {
     },
 
     updateDreamById: async (req,res)=>{
-        console.log(req)
+        console.log(req.body.dreamIdFromJSFile)
+        try{
+            await Journal.findByIdAndUpdate({_id: req.body.dreamIdFromJSFile},{
+                //new key value goes here
+            })
+            console.log('Dream Updated')
+            res.json('Dream updated')
+        }catch(err){
+            console.log(err)
+        }
         
     }
 }

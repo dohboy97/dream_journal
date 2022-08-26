@@ -10,9 +10,7 @@ Array.from(delBtn).forEach(element=>{
     element.addEventListener('click',deleteDream)
 })
 
-Array.from(editBtn).forEach(element=>{
-    element.addEventListener('click',editDream)
-})
+
 
 
 Array.from(updateBtn).forEach(element=>{
@@ -26,7 +24,7 @@ async function updateDreamById(){
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'dreamIdIdFromJSFile':dreamId
+                'dreamIdFromJSFile':dreamId
             })
         })
         const data = await response.json()

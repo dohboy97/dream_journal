@@ -21,7 +21,7 @@
         <div class = 'h-full' data-id='<%=dreams._id%>'>
         <div id="editor" class = 'h-1/2' data-id='<%=dreams._id%>'>
             <li class='dream' data-id='<%=dreams._id%>'>
-                <span id = 'dreamText' class='<%= dreams.completed === true ? 'completed' : 'not'%>'><%= dreams.dream %></span>
+                <p id = 'dreamText' class='<%= dreams.completed === true ? 'completed' : 'not'%>'><%= dreams.dream %></p>
           </div>
           <span class='del text-amber-400'> Delete </span>
           <br>

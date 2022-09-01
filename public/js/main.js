@@ -19,20 +19,23 @@ Array.from(updateBtn).forEach(element=>{
 
 async function updateDreamById(){
     const dreamId = this.parentNode.dataset.id
-    const dreamText = document.querySelector('#dreamText').innerHTML
-    console.log(dreamText)
+    const dreamText = document.querySelector('p').value
+    
     try{
         const response = await fetch(`/journal/edit/${dreamId}/update`, {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'dreamIdFromJSFile':dreamId
+                'dreamIdFromJSFile':dreamId,
+                'dream':dreamText
             })
         })
         const data = await response.json()
         console.log(data)
+        console.log(dreamText)
         window.location.reload()
         window.location.href = '/journal'
+        console.log(dreamText)
     }catch(err){
         console.log(err)
     }

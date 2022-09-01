@@ -34,8 +34,9 @@ module.exports = {
         console.log(req.body.dreamIdFromJSFile)
         try{
             await Journal.findByIdAndUpdate({_id: req.body.dreamIdFromJSFile},{
-                //new key value goes here
+                dream:dreamText
             })
+            console.log(dreamText)
             console.log('Dream Updated')
             res.json('Dream updated')
         }catch(err){

@@ -19,6 +19,8 @@ Array.from(updateBtn).forEach(element=>{
 
 async function updateDreamById(){
     const dreamId = this.parentNode.dataset.id
+    const dreamText = document.querySelector('#dreamText').innerHTML
+    console.log(dreamText)
     try{
         const response = await fetch(`/journal/edit/${dreamId}/update`, {
             method: 'put',

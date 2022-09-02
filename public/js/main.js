@@ -1,5 +1,10 @@
 
+//need to import the getText variable from the quill textbox - is in the edit.ejs script
+
+
 //queryselectors for the varying buttons to trigger crud functions
+
+
 
 const delBtn = document.querySelectorAll('.del')
 
@@ -24,7 +29,7 @@ async function updateDreamById(){
 
     //grab via parentnode and childnode as queryselector not working
 
-    const dreamText = document.querySelector('p').value
+    const dreamText = document.getElementsByClassName('ql-editor').childNode.value
     
     try{
         const response = await fetch(`/journal/edit/${dreamId}/update`, {

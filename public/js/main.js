@@ -12,7 +12,6 @@ Array.from(delBtn).forEach(element=>{
 
 
 
-
 Array.from(updateBtn).forEach(element=>{
     element.addEventListener('click',updateDreamById)
 })

@@ -24,6 +24,15 @@ Array.from(updateBtn).forEach(element=>{
     element.addEventListener('click',updateDreamById)
 })
 
+//due to quill not working properly with the form, need to create a function for createDream instead
+
+async function createDream(){
+    const dreamText = quill.getText(0,)
+}
+
+
+
+
 async function updateDreamById(){
     const dreamId = this.parentNode.dataset.id
 

@@ -1,10 +1,13 @@
 
+//queryselectors for the varying buttons to trigger crud functions
 
 const delBtn = document.querySelectorAll('.del')
 
 const editBtn = document.querySelectorAll('.edit')
 
 const updateBtn = document.querySelectorAll('.updateBtn')
+
+//adding an event listener for the update and delete buttons on EACH dream
 
 Array.from(delBtn).forEach(element=>{
     element.addEventListener('click',deleteDream)
@@ -18,6 +21,9 @@ Array.from(updateBtn).forEach(element=>{
 
 async function updateDreamById(){
     const dreamId = this.parentNode.dataset.id
+
+    //grab via parentnode and childnode as queryselector not working
+
     const dreamText = document.querySelector('p').value
     
     try{
@@ -31,7 +37,7 @@ async function updateDreamById(){
         })
         const data = await response.json()
         console.log(data)
-        console.log(dreamText)
+       
         window.location.reload()
         window.location.href = '/journal'
         console.log(dreamText)

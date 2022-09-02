@@ -12,6 +12,8 @@ const editBtn = document.querySelectorAll('.edit')
 
 const updateBtn = document.querySelectorAll('.updateBtn')
 
+const submitBtn = document.querySelectorAll('.submitBtn')
+
 //adding an event listener for the update and delete buttons on EACH dream
 
 Array.from(delBtn).forEach(element=>{
@@ -22,6 +24,10 @@ Array.from(delBtn).forEach(element=>{
 
 Array.from(updateBtn).forEach(element=>{
     element.addEventListener('click',updateDreamById)
+})
+
+Array.from(submitBtn).forEach(element=>{
+    element.addEventListener('click',createDream)
 })
 
 //due to quill not working properly with the form, need to create a function for createDream instead

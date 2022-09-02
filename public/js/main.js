@@ -27,9 +27,9 @@ Array.from(updateBtn).forEach(element=>{
 async function updateDreamById(){
     const dreamId = this.parentNode.dataset.id
 
-    //grab via parentnode and childnode as queryselector not working
+    //grab update text with quill gettext method
 
-    const dreamText = document.getElementsByClassName('ql-editor').childNode.value
+    const dreamText = quill.getText(0,)
     
     try{
         const response = await fetch(`/journal/edit/${dreamId}/update`, {

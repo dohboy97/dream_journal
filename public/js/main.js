@@ -34,6 +34,24 @@ Array.from(submitBtn).forEach(element=>{
 
 async function createDream(){
     const dreamText = quill.getText(0,)
+
+    try{
+        const response = await fetch (`/journal/createDream` , {
+            method:'post',
+            headers: {'Content-type' : 'application/json'},
+            body: JSON.stringify({
+                'dream':dreamText
+            })
+        })
+        const data = await response.json()
+        console.log(data)
+        window.location.reload()
+        window.location.href = '/journal'
+        console.log(dreamText)
+    }catch(err){
+        console.log(err)
+    }
+
 }
 
 

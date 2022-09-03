@@ -12,11 +12,11 @@ module.exports = {
 
     createDream: async (req,res)=>{
         try{
-            await Journal.create({dream: req.body.dreamEntry
+            await Journal.create({dream: req.body.dream
             })
-            //will add date functionality afterwards
+           
             console.log('sent')
-            console.log(req.body.dreamEntry)
+            console.log(req.body.dream)
             res.redirect('/journal')
         }catch(err){
             console.log(err)

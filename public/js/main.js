@@ -34,7 +34,7 @@ Array.from(submitBtn).forEach(element=>{
 
 async function createDream(){
     const dreamText = quill.getText(0,)
-
+    console.log (dreamText)
     try{
         const response = await fetch (`/journal/createDream` , {
             method:'post',

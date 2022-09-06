@@ -34,11 +34,12 @@ Array.from(submitBtn).forEach(element=>{
 
 async function createDream(){
     const dreamText = quill.getText(0,)
+    console.log(typeof(dreamText))
     console.log (dreamText)
     try{
         const response = await fetch (`/journal/createDream` , {
             method:'post',
-            headers: {'Content-type' : 'application/json'},
+            headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
                 'dream':dreamText
             })

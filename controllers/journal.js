@@ -15,7 +15,7 @@ module.exports = {
             await Journal.create({dream: req.body.dream
             })
            
-            console.log('sent')
+            console.log('created dream')
             console.log(req.body.dream)
             res.redirect('/journal')
         }catch(err){

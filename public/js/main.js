@@ -33,22 +33,25 @@ Array.from(submitBtn).forEach(element=>{
 //due to quill not working properly with the form, need to create a function for createDream instead
 
 async function createDream(){
-    const dreamText = quill.getText(0,)
-    console.log(typeof(dreamText))
+    const dreamTextFromJsFile = quill.getText(0,)
+    let dateFromJsFile = `${Date.getMonth()} ${Date.getDate()} ${Date.getFullYear()}`
+
+
     console.log (dreamText)
     try{
-        const response = await fetch (`/journal/createDream` , {
+        const response = await fetch ('/journal/createDream' , {
             method:'post',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'dream':dreamText
+                'dream':dreamTextFromJsFile,
+                'date': dateFromJsFile
             })
         })
         const data = await response.json()
         console.log(data)
         window.location.reload()
         window.location.href = '/journal'
-        console.log(dreamText)
+        console.log(dreamTextFromJsFile)
     }catch(err){
         console.log(err)
     }

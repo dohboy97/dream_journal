@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const journalSchema = new Schema({
     dream: String,
-    completed: Boolean,
+    date:String,
 })
 
 module.exports = mongoose.model('Journal', journalSchema)

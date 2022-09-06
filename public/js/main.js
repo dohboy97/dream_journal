@@ -50,17 +50,10 @@ async function createDream(){
             method:'post',
             headers: {"Content-type": "application/json"},
             body: JSON.stringify({
-                dream: dreamTextFromJsFile,
-                date: dateFromJsFile
+                'dream': dreamTextFromJsFile,
+                'date': dateFromJsFile
             })
-
-        
         })
-
-        // commented out section just below was causing errors - as response was in html
-
-        // const data = await response.json()
-        // console.log(data)
         window.location.reload()
         window.location.href = '/journal'
         console.log(dateFromJsFile)
@@ -69,9 +62,6 @@ async function createDream(){
     }
 
 }
-
-
-
 
 async function updateDreamById(){
     const dreamId = this.parentNode.dataset.id

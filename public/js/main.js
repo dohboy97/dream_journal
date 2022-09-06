@@ -34,21 +34,23 @@ Array.from(submitBtn).forEach(element=>{
 
 async function createDream(){
     const dreamTextFromJsFile = quill.getText(0,)
-    let dateFromJsFile = `${Date.getMonth()} ${Date.getDate()} ${Date.getFullYear()}`
 
+    let dateFromJsFile = new Date
+    dateFromJsFile = String(dateFromJsFile)
 
-    console.log (dreamText)
+    
     try{
         const response = await fetch ('/journal/createDream' , {
             method:'post',
-            headers: {'Content-type': 'application/json'},
+            headers: {"Content-type": "application/json"},
             body: JSON.stringify({
-                'dream':dreamTextFromJsFile,
-                'date': dateFromJsFile
+                dream: dreamTextFromJsFile,
+                date: dateFromJsFile
             })
+
         })
-        const data = await response.json()
-        console.log(data)
+        // const data = await response.json()
+        // console.log(data)
         window.location.reload()
         window.location.href = '/journal'
         console.log(dreamTextFromJsFile)

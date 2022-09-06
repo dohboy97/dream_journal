@@ -12,7 +12,9 @@ module.exports = {
 
     createDream: async (req,res)=>{
         try{
-            await Journal.create({dream: req.body.dream
+            await Journal.create({
+                dream: req.body.dream,
+                date:req.body.date
             })
            
             console.log('created dream')

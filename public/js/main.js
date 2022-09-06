@@ -35,8 +35,14 @@ Array.from(submitBtn).forEach(element=>{
 async function createDream(){
     const dreamTextFromJsFile = quill.getText(0,)
 
+        //see below a variable for storing the date and time upon submission
+
     let dateFromJsFile = new Date
     dateFromJsFile = String(dateFromJsFile)
+    let dateArr = dateFromJsFile.split(' ')
+    dateFromJsFile = `${dateArr[0]} ${dateArr[1]} ${dateArr[2]} ${dateArr[3]}`
+    
+    
 
     
     try{

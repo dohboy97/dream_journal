@@ -14,7 +14,7 @@ module.exports = {
         try{
             await Journal.create({
                 dream: req.body.dream,
-                date:req.body.date
+                date: req.body.date
             })
            
             console.log('created dream')

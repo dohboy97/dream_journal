@@ -63,7 +63,7 @@ async function createDream(){
         // console.log(data)
         window.location.reload()
         window.location.href = '/journal'
-        console.log(dreamTextFromJsFile)
+        console.log(dateFromJsFile)
     }catch(err){
         console.log(err)
     }

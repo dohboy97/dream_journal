@@ -48,7 +48,11 @@ async function createDream(){
                 date: dateFromJsFile
             })
 
+        
         })
+
+        // commented out section just below was causing errors - as response was in html
+
         // const data = await response.json()
         // console.log(data)
         window.location.reload()

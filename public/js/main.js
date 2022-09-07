@@ -106,7 +106,7 @@ async function updateDreamById(){
         console.log(data)
        
         window.location.reload()
-        window.location.href = '/'
+        window.location.href = '/home'
         console.log(dreamText)
     }catch(err){
         console.log(err)
@@ -128,7 +128,7 @@ async function deleteDream(){
         const data = await response.json()
         console.log(data)
         window.location.reload()
-        window.location.href = '/journal'
+        window.location.href = '/'
     }catch(err){
         console.log(err)
     }

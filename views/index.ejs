@@ -12,15 +12,7 @@
     
     <main class = 'mx-auto bg-indigo-400 h-3/4 rounded-md p-1'>
         <h1 class = 'text-amber-400'>Welcome to the Dream Journal</h1>
-
-        <!-- <% dreams.forEach( el => { %>
-            <li class='dream' data-id='<%=el._id%>'>
-                <span class='<%= el.date === true ? 'completed' : 'not'%>'><%= el.dream %></span>
-                <span class='del text-amber-400'> Delete </span>
-                <a href = '/journal/edit/<%=el._id%>'class = 'edit text-amber-400'>Edit</a>
-              
-            </li>
-        <% }) %>     -->
+       
         
         <h2>Select a date to see your dream from that given day</h2>
 
@@ -29,6 +21,20 @@
         <button class = 'dataSearchBtn'>Search</button>
         </div>
         <a href = '/journal' class = 'text-amber-400'>Journal page</a>
+
+        <!--If else statement - if todays dream exists, show it. if not, give suggestion to visit journal page-->
+
+        <div>
+
+            <%  %>
+               <li class='dream' data-id='<%=dreams._id%>'>
+                   <span><%= dreams.dream %></span>
+                   <span class='del text-amber-400'> Delete </span>
+                   <a href = '/journal/edit/<%=dreams._id%>'class = 'edit text-amber-400'>Edit</a>
+                 
+               </li>
+           <%  %>     
+           </div>
     
     </main>
 </body>

@@ -33,6 +33,7 @@ function todaysDate(){
     return dateFromJsFile
 }
 
+
 //adding an event listener for the update and delete buttons on EACH dream
 
 Array.from(delBtn).forEach(element=>{

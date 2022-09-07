@@ -14,6 +14,8 @@ const updateBtn = document.querySelectorAll('.updateBtn')
 
 const submitBtn = document.querySelectorAll('.submitBtn')
 
+const dateSearchBtn = document.querySelectorAll('.dateSearchBtn')
+
 //adding an event listener for the update and delete buttons on EACH dream
 
 Array.from(delBtn).forEach(element=>{
@@ -25,6 +27,13 @@ Array.from(delBtn).forEach(element=>{
 Array.from(updateBtn).forEach(element=>{
     element.addEventListener('click',updateDreamById)
 })
+
+// ADDING  a button event listener on the homepage to be able to render dreams from a given date
+
+Array.from(dateSearchBtn).forEach(element=>{
+    element.addEventListener('click',readDate)
+})
+
 
 Array.from(submitBtn).forEach(element=>{
     element.addEventListener('click',createDream)

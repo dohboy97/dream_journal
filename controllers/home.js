@@ -27,7 +27,7 @@ module.exports = {
             const todaysDream = await Journal.findOne({
                 date: todaysDate()
             })
-            console.log(todaysDream)
+            
         res.render('index.ejs', {dreams: todaysDream})
         }catch(err){
             console.log(err)

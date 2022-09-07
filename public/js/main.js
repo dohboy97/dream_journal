@@ -106,7 +106,7 @@ async function updateDreamById(){
         console.log(data)
        
         window.location.reload()
-        window.location.href = '/journal'
+        window.location.href = '/'
         console.log(dreamText)
     }catch(err){
         console.log(err)
@@ -114,7 +114,9 @@ async function updateDreamById(){
 }
 
 async function deleteDream(){
+    
     const dreamId = this.parentNode.dataset.id 
+    console.log(dreamId)
     try{
         const response = await fetch ('/journal/deleteDream', {
             method:'delete',

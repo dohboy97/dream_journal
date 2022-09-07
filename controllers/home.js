@@ -4,6 +4,11 @@ const Journal = require('../models/journal')
 
 module.exports = {
     getIndex:async(req,res)=>{
-        res.render('index.ejs')
+        try{
+            const todaysDream = await Journal.find()
+        res.render('index.ejs'), {dreams: todaysDream}
+        }catch(err){
+            console.log(err)
+        }
     }
 }

@@ -8,9 +8,19 @@
     <title>Dream Journal</title>
 </head>
 <body class = 'p-5 h-screen'>
+    <script src = 'js/main.js'></script>
     
     <main class = 'mx-auto bg-indigo-400 h-3/4 rounded-md p-1'>
         <h1 class = 'text-amber-400'>Welcome to the Dream Journal</h1>
+
+        <!-- <% dreams.forEach( el => { %>
+            <li class='dream' data-id='<%=el._id%>'>
+                <span class='<%= el.date === true ? 'completed' : 'not'%>'><%= el.dream %></span>
+                <span class='del text-amber-400'> Delete </span>
+                <a href = '/journal/edit/<%=el._id%>'class = 'edit text-amber-400'>Edit</a>
+              
+            </li>
+        <% }) %>     -->
         
         <h2>Select a date to see your dream from that given day</h2>
 

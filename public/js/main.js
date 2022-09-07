@@ -16,6 +16,23 @@ const submitBtn = document.querySelectorAll('.submitBtn')
 
 const dateSearchBtn = document.querySelectorAll('.dateSearchBtn')
 
+//todays date function to run on index.ejs for displaying todays dream
+
+function todaysDate(){
+    let dateFromJsFile = new Date
+
+    //getting month to put into mm/dd/yyyy format
+    let month = dateFromJsFile.getMonth() + 1
+    month=String(month)
+    if(month.length<2){
+        month= '0'+month
+    }
+    dateFromJsFile = String(dateFromJsFile)
+    let dateArr = dateFromJsFile.split(' ')
+    dateFromJsFile =`${month}/${dateArr[2]}/${dateArr[3]}`
+    return dateFromJsFile
+}
+
 //adding an event listener for the update and delete buttons on EACH dream
 
 Array.from(delBtn).forEach(element=>{
@@ -46,18 +63,7 @@ async function createDream(){
 
         //see below a variable for storing the date and time upon submission
 
-    let dateFromJsFile = new Date
-
-    //getting month to put into mm/dd/yyyy format
-    let month = dateFromJsFile.getMonth() + 1
-    month=String(month)
-    if(month.length<2){
-        month= '0'+month
-    }
-    dateFromJsFile = String(dateFromJsFile)
-    let dateArr = dateFromJsFile.split(' ')
-    dateFromJsFile =`${month}/${dateArr[2]}/${dateArr[3]}`
-    
+    let dateFromJsFile = todaysDate()
     
 
     

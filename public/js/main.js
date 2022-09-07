@@ -38,9 +38,15 @@ async function createDream(){
         //see below a variable for storing the date and time upon submission
 
     let dateFromJsFile = new Date
+
+    //getting month to put into mm/dd/yyyy format
+    let month = dateFromJsFile.getMonth() + 1
+    if(month.length<2){
+        month= '0'+month
+    }
     dateFromJsFile = String(dateFromJsFile)
     let dateArr = dateFromJsFile.split(' ')
-    dateFromJsFile = `${dateArr[0]} ${dateArr[1]} ${dateArr[2]} ${dateArr[3]}`
+    dateFromJsFile =`${month}/${dateArr[2]}/${dateArr[3]}`
     
     
 

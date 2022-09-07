@@ -26,14 +26,15 @@
 
         <div>
 
-            <%  %>
-               <li class='dream' data-id='<%=dreams._id%>'>
+            <% if(dreams){ %>
+                <h2>Todays Dream Entry:</h2>
+               <p class='dream' data-id='<%=dreams._id%>'>
                    <span><%= dreams.dream %></span>
                    <span class='del text-amber-400'> Delete </span>
                    <a href = '/journal/edit/<%=dreams._id%>'class = 'edit text-amber-400'>Edit</a>
                  
-               </li>
-           <%  %>     
+               </p>
+           <% } %>     
            </div>
     
     </main>

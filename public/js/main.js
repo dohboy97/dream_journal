@@ -41,6 +41,7 @@ async function createDream(){
 
     //getting month to put into mm/dd/yyyy format
     let month = dateFromJsFile.getMonth() + 1
+    month=String(month)
     if(month.length<2){
         month= '0'+month
     }

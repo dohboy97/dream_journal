@@ -16,6 +16,7 @@ const submitBtn = document.querySelectorAll('.submitBtn')
 
 const dateSearchBtn = document.querySelectorAll('.dateSearchBtn')
 
+
 //todays date function to run on index.ejs for displaying todays dream
 
 function todaysDate(){
@@ -132,4 +133,9 @@ async function deleteDream(){
     }catch(err){
         console.log(err)
     }
+}
+
+   function readDate(){
+    console.log(document.querySelector('input').value)
+    
 }

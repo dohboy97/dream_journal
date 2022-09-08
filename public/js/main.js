@@ -107,7 +107,7 @@ async function updateDreamById(){
         console.log(data)
        
         window.location.reload()
-        window.location.href = '/home'
+        window.location.href = '/'
         console.log(dreamText)
     }catch(err){
         console.log(err)
@@ -136,6 +136,6 @@ async function deleteDream(){
 }
 
    function readDate(){
-    console.log(document.querySelector('input').value)
-    
+    let customDate = document.querySelector('input').value
+    //going to have this actually act as a redirect to user/journal/date
 }

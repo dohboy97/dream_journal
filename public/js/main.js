@@ -76,7 +76,7 @@ async function createDream(){
             body: JSON.stringify({
                 'dream': dreamTextFromJsFile,
                 'date': dateFromJsFile,
-                'userId': userIdFromJsFile
+                
 
             })
         })

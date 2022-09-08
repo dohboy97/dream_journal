@@ -12,9 +12,11 @@ module.exports = {
 
     createDream: async (req,res)=>{
         try{
+            
             await Journal.create({
                 dream: req.body.dream,
                 date: req.body.date,
+                userId: req.user.id
                 
             })
            

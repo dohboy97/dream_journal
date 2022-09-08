@@ -1,13 +1,22 @@
 const express = require ('express');
 const app = express()
 const connectDB = require('./config/database')
+const passport = require('passport')
+const session = require('express-session')
+const MongoStore = require('connect-mongo')(session)
+
+const authroutes = require('./routes/auth')
 const homeRoute = require('./routes/home')
 const journalRoute = require('./routes/journal')
 const editRoute = require ('./routes/edit')
 const nocache = require('nocache')
 app.use(nocache())
 
-const bodyParser = require('body-parser')
+//passport config
+require('./config/passport')(passport)
+
+const bodyParser = require('body-parser');
+const { default: mongoose } = require('mongoose');
 
 require('dotenv').config({path: './config/.env'})
 
@@ -21,8 +30,23 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
+//sessions setup
+app.use(
+    session({
+        secret: 'keyboard cat',
+        resave: false,
+        saveUninitialized:false,
+        store: new MongoStore({mongooseConnection: mongoose.connection}),
+    })
+)
+
+//passport middleware
+
+app.use(passport.initialize())
+app.use(passport.session())
 
 
+//routes
 app.use('/', homeRoute)
 app.use('/journal', journalRoute)
 app.use('/journal/edit', editRoute)

@@ -66,7 +66,7 @@ async function createDream(){
         //see below a variable for storing the date and time upon submission
 
     let dateFromJsFile = todaysDate()
-    
+  
 
     
     try{
@@ -75,7 +75,9 @@ async function createDream(){
             headers: {"Content-type": "application/json"},
             body: JSON.stringify({
                 'dream': dreamTextFromJsFile,
-                'date': dateFromJsFile
+                'date': dateFromJsFile,
+                'userId': userIdFromJsFile
+
             })
         })
         window.location.reload()

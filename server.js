@@ -4,8 +4,9 @@ const connectDB = require('./config/database')
 const passport = require('passport')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
+const flash = require('express-flash')
+const logger = require('morgan')
 
-const authroutes = require('./routes/auth')
 const homeRoute = require('./routes/home')
 const journalRoute = require('./routes/journal')
 const editRoute = require ('./routes/edit')
@@ -29,7 +30,7 @@ app.use(express.static('public'))
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
-
+app.use(logger('dev'))
 //sessions setup
 app.use(
     session({
@@ -45,6 +46,7 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 
+app.use(flash())
 
 //routes
 app.use('/', homeRoute)

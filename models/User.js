@@ -8,6 +8,7 @@ const UserSchema = new mongoose.Schema({
     password: String
 })
 
+//for pass hashing
 UserSchema.pre('save', function save(next){
     const user = this
 
@@ -22,3 +23,13 @@ UserSchema.pre('save', function save(next){
     })
 
 })
+
+//helper to validate passwords
+
+UserSchema.methods.comparePassword = function comparePassword(candidatePassword, cb){
+    bcrypt.compare(candidatePassword, this.password, (err, isMatch)=> {
+        cb(err, isMatch)
+    })
+}
+
+module.exports = mongoose.model('User', UserSchema)

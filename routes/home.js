@@ -5,7 +5,9 @@ const homeController = require('../controllers/home')
 
 const {ensureAuth, ensureGuest} = require('../middleware/auth')
 
-router.get('/', homeController.getIndex)
+router.get('/', homeController.getHome)
+
+//these are from when this was the landing page - unsure if need to keep for user login/logout functionality on every page?
 router.get('/login', authController.getLogin)
 router.post('/login', authController.postLogin)
 router.get('/logout', authController.logout)

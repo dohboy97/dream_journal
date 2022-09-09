@@ -22,14 +22,14 @@ module.exports = {
     
     
     
-    getIndex:async(req,res)=>{
+    getHome:async(req,res)=>{
        
         try{
             const todaysDream = await Journal.findOne({
                 date: todaysDate()
             })
             
-        res.render('index.ejs', {dreams: todaysDream})
+        res.render('home.ejs', {dreams: todaysDream})
         }catch(err){
             console.log(err)
         }

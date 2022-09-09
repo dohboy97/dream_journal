@@ -12,34 +12,11 @@
     
     <main class = 'mx-auto bg-indigo-400 h-3/4 rounded-md p-1'>
         <h1 class = 'text-amber-400'>Welcome to the Dream Journal</h1>
-       
-        
-        <h2>Select a date to see your dream from that given day</h2>
-
-        <div>
-        <input class = 'dateValue' type = 'date'>
-        <button class = 'dateSearchBtn'>Search</button>
-        </div>
-        
-
-        <!--If else statement - if todays dream exists, show it. if not, give suggestion to visit journal page-->
-
-        <div>
-
-            <% if(dreams){ %>
-                <h2>Todays Dream Entry:</h2>
-               <p class='dream' data-id='<%=dreams._id%>'>
-                   <span><%= dreams.dream %></span>
-                   <span class='del text-amber-400'> Delete </span>
-                   <a href = '/journal/edit/<%=dreams._id%>'class = 'edit text-amber-400'>Edit</a>
-                 
-               </p>
-           <% }else{ %>  
-            <h2>It appears that you have yet to log your dream journal today. Click below to do so!</h2>
-               <a class = 'text-amber-400'href = '/journal'>Journal Page</a>
-               <% } %>  
-           </div>
-    
+       <a href="/login">login</a>
+       <a href = '/logout'>logout</a>
+        <a href = '/signup'>Signup</a>
+      <h2>this is the landing page</h2></hj2>
+    <a href = '/home'>home</a>
     </main>
     <script src = 'js/main.js'></script>
 </body>

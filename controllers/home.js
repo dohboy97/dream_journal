@@ -23,6 +23,7 @@ module.exports = {
     
     
     getIndex:async(req,res)=>{
+       
         try{
             const todaysDream = await Journal.findOne({
                 date: todaysDate()
@@ -32,5 +33,6 @@ module.exports = {
         }catch(err){
             console.log(err)
         }
+        
     }
 }

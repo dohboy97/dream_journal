@@ -11,6 +11,7 @@ module.exports = {
     },
 
     createDream: async (req,res)=>{
+       
         try{
             
             await Journal.create({

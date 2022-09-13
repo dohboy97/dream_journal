@@ -26,21 +26,11 @@
         </div>
        
         <div class = 'h-1/2'>
-            <a href = '/' class = 'text-amber-400'>Home</a>
+            <a href = '/home' class = 'text-amber-400'>Home</a>
 
             
 
-            <h3>Previous Dreams:</h3>
-        <ul>
-            <% dreams.forEach( el => { %>
-                <li class='dream' data-id='<%=el._id%>'>
-                    <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.dream %></span>
-                    <span class='del text-amber-400'> Delete </span>
-                    <a href = '/journal/edit/<%=el._id%>'class = 'edit text-amber-400'>Edit</a>
-                  
-                </li>
-            <% }) %>    
-            </ul>
+         
             </div>
     </main>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>

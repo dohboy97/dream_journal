@@ -28,7 +28,14 @@ module.exports = {
             const todaysDream = await Journal.findOne({
                 date: todaysDate()
             })
-            
+            //checking to see if user is authenticated before displaying either login or logout button
+            let authenticated
+            if(req.isAuthenticated()){
+                authenticated = true
+                
+            }else{
+                authenticated = false
+            }
         res.render('index.ejs', {dreams: todaysDream})
         }catch(err){
             console.log(err)

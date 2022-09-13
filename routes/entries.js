@@ -7,7 +7,7 @@ const entriesController = require('../controllers/entries')
 
 const ensureAuth  = require('../middleware/auth')
 
-router.get('/', ensureAuth.ensureAuth,  entriesController.getDream)
+router.get('/', ensureAuth.ensureAuth, entriesController.getDream)
 
 
 

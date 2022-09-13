@@ -4,24 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href = "css/dist/output.css" rel = 'stylesheet'>
+    <link href = "/css/dist/output.css" rel = 'stylesheet'>
     <title>Dream Journal</title>
 </head>
-<body>
-    <h3>Previous Dreams:</h3>
-    <ul>
 
-        <% dreams.forEach( el => { %>
+    
+    <body class = 'p-5 h-screen'>
+       
+    
+        <main class = 'mx-auto bg-indigo-400 h-3/4 rounded-md p-1'>
+          <a href = '/logout'>Log out</a>
             
-            <li class='dream' data-id='<%=el._id%>'>
-                <span><%=el.date %></span>
-                <span><%= el.dream %></span>
-                <span class='del text-amber-400'> Delete </span>
-                <a href = '/journal/edit/<%=el._id%>'class = 'edit text-amber-400'>Edit</a>
-              
-            </li>
-        <% }) %>    
-        </ul>
-        <script src = 'js/main.js'></script>
+          <h3>Previous Dreams:</h3>
+            <a href="/home">Home</a>
+    
+            
+    
+            <% dreams.forEach( el => { %>
+        
+                <li class='dream' data-id='<%=el._id%>'>
+                    <span><%=el.date %></span>
+                    <span><%= el.dream %></span>
+                    <span class='del text-amber-400'> Delete </span>
+                    <a href = '/journal/edit/<%=el._id%>'class = 'edit text-amber-400'>Edit</a>
+                  
+                </li>
+            <% }) %>    
+            </ul>
+            
+          
+    
+        </main>
+        <script src = '/js/main.js'></script>
 </body>
 </html>
+
+<ul>

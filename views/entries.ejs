@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href = "css/dist/output.css" rel = 'stylesheet'>
     <title>Dream Journal</title>
 </head>
 <body>
@@ -12,12 +13,14 @@
 
         <% dreams.forEach( el => { %>
             <li class='dream' data-id='<%=el._id%>'>
-                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.dream %></span>
+                <span><%=el.date %></span>
+                <span><%= el.dream %></span>
                 <span class='del text-amber-400'> Delete </span>
                 <a href = '/journal/edit/<%=el._id%>'class = 'edit text-amber-400'>Edit</a>
               
             </li>
         <% }) %>    
         </ul>
+        <script src = 'js/main.js'></script>
 </body>
 </html>

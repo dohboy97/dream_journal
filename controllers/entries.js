@@ -3,10 +3,9 @@ const Journal = require('../models/journal')
 module.exports = {
     getDream: async (req,res)=>{
         try{
-            const dreamEntry = await Journal.find()
-            res.render('entries.ejs', {dreams: dreamEntry,
+            const dreamEntry = await Journal.find({userId:req.user.id})
+            res.render('entries.ejs', {dreams: dreamEntry,})
             //to then in ejs filter so that only this specific user's messages are displayed
-                user: req.user.id                  })
         }catch(err){
             console.log(err)
         }

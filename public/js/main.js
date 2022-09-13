@@ -81,7 +81,7 @@ async function createDream(){
             })
         })
         window.location.reload()
-        window.location.href = '/journal'
+        window.location.href = '/home'
         console.log(dateFromJsFile)
     }catch(err){
         console.log(err)

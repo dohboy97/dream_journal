@@ -23,7 +23,7 @@ module.exports = {
            
             console.log('created dream')
             console.log(req.body.date)
-            res.redirect('/journal')
+            res.redirect('/home')
         }catch(err){
             console.log(err)
         }

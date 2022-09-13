@@ -11,6 +11,7 @@ const landingRoute = require('./routes/landing')
 const homeRoute = require('./routes/home')
 const journalRoute = require('./routes/journal')
 const editRoute = require ('./routes/edit')
+const entriesRoute = require('./routes/entries')
 const nocache = require('nocache')
 app.use(nocache())
 
@@ -56,6 +57,7 @@ app.use('/', landingRoute)
 app.use('/home', homeRoute)
 app.use('/journal', journalRoute)
 app.use('/journal/edit', editRoute)
+app.use('/journal/entries',entriesRoute)
 
  
 app.listen(process.env.PORT, ()=>{

@@ -25,9 +25,7 @@ module.exports = {
     getIndex:async(req,res)=>{
        
         try{
-            const todaysDream = await Journal.findOne({
-                date: todaysDate()
-            })
+            
             //checking to see if user is authenticated before displaying either login or logout button
             let authenticated
             if(req.isAuthenticated()){
@@ -36,7 +34,7 @@ module.exports = {
             }else{
                 authenticated = false
             }
-        res.render('index.ejs', {dreams: todaysDream})
+        res.render('index.ejs', {authentic: authenticated})
         }catch(err){
             console.log(err)
         }

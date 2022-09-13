@@ -5,9 +5,9 @@ const router = express.Router()
 const authController = require('../controllers/auth')
 const journalController = require('../controllers/journal')
 
-const {ensureAuth, ensureGuest} = require('../middleware/auth')
+const ensureAuth  = require('../middleware/auth')
 
-router.get('/', journalController.getDream)
+router.get('/', ensureAuth.ensureAuth,  journalController.getDream)
 
 router.post('/createDream', journalController.createDream)
 

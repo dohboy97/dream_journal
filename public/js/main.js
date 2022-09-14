@@ -139,5 +139,12 @@ async function deleteDream(){
 
    function readDate(){
     let customDate = document.querySelector('input').value
-    //going to have this actually act as a redirect to user/journal/date
+
+    //function that reads and converts the inputted date to compare with those of dreams of that user within the database. can then display that dream if custom selected by date
+
+    customDate = customDate.split('-')
+    customDate= `${customDate[1]}/${customDate[2]}/${customDate[0]}`
+
+
+    console.log(customDate)
 }

@@ -33,8 +33,8 @@ module.exports = {
             res.render('entries.ejs', {dreamsByDate: true,
             dreams: dreamEntriesByDate})
             let date = req.params.date
-            console.log(dreamEntriesByDate)
-            res.redirect(`/journal/entries/${date}`)
+            
+            // res.redirect(`/journal/entries/${date}`)
         }catch(err){
             console.log(err)
         }

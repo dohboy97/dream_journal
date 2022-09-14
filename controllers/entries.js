@@ -5,7 +5,8 @@ module.exports = {
     getDream: async (req,res)=>{
         try{
             const dreamEntry = await Journal.find({userId:req.user.id})
-            res.render('entries.ejs', {dreams: dreamEntry,})
+            res.render('entries.ejs', {dreams: dreamEntry,
+            dreamsByDate: false})
             //to then in ejs filter so that only this specific user's messages are displayed
         }catch(err){
             console.log(err)
@@ -29,7 +30,11 @@ module.exports = {
                 date: req.params.date,
                 userId:req.user.id
             })
-            res.render('entries.ejs', {dreams: dreamEntriesByDate})
+            res.render('entries.ejs', {dreamsByDate: true,
+            dreams: dreamEntriesByDate})
+            let date = req.params.date
+            console.log(dreamEntriesByDate)
+            res.redirect(`/journal/entries/${date}`)
         }catch(err){
             console.log(err)
         }

@@ -144,8 +144,10 @@ async function deleteDream(){
     customDate= `${customDate[1]}-${customDate[2]}-${customDate[0]}`
     try{
         const response = await fetch(`/journal/entries/${customDate}`)
-        const data = await response.json()
-        console.log(data)
+        
+        console.log(response)
+        window.location.reload()
+        window.location.href = `/journal/entries/${customDate}`
     }catch(err){
         console.log(err)
     }

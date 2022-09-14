@@ -599,6 +599,11 @@ video {
   color: rgb(251 191 36 / var(--tw-text-opacity));
 }
 
+.underline {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
 body{
   background-image: url('../../imgs/cartoon1.jpg');
   background-repeat: no-repeat;

@@ -26,8 +26,22 @@
 
           <h3>Previous Dreams:</h3>
             <a href="/home">Home</a>
-    
+
+            <% if (dreamsByDate === true){ %>
             
+                <% dreams.forEach( el => { %>
+        
+                    <li class='dream <%=el.date%>' data-id='<%=el._id%>'>
+                        <span><%=el.date %></span>
+                        <span><%= el.dream %></span>
+                        <span class='del text-amber-400'> Delete </span>
+                        <a href = '/journal/edit/<%=el._id%>'class = 'edit text-amber-400'>Edit</a>
+                      
+                    </li>
+                <% }) %>    
+                </ul>
+                <a class = 'text-amber-400 underline'href = '/journal/entries'>Back to your entire feed</a>
+            <% }else{ %>
     
             <% dreams.forEach( el => { %>
         
@@ -41,7 +55,7 @@
             <% }) %>    
             </ul>
             
-          
+          <% } %>
     
         </main>
         <script src = '/js/main.js'></script>

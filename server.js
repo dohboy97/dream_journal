@@ -7,6 +7,7 @@ const MongoStore = require('connect-mongo')
 const flash = require('express-flash')
 const logger = require('morgan')
 
+const PORT = process.env.PORT || 7777
 const landingRoute = require('./routes/landing')
 const homeRoute = require('./routes/home')
 const journalRoute = require('./routes/journal')
@@ -60,6 +61,6 @@ app.use('/journal/edit', editRoute)
 app.use('/journal/entries',entriesRoute)
 
  
-app.listen(process.env.PORT || 7777, ()=>{
-    console.log('Server is running, you better catch it!')
+app.listen(PORT, ()=>{
+    console.log(`Server is running on port ${PORT}`)
 })     

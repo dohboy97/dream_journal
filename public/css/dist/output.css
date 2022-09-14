@@ -594,6 +594,10 @@ video {
   padding: 0.25rem;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .text-amber-400 {
   --tw-text-opacity: 1;
   color: rgb(251 191 36 / var(--tw-text-opacity));

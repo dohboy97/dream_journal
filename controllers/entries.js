@@ -6,7 +6,7 @@ module.exports = {
         try{
 
             //count
-            let count = await Journal.find({userId:req.user.id}).count
+            let count = await Journal.countDocuments({userId:req.user.id})
 
             let perPage = 10
             let page = req.params.page || 1
@@ -17,7 +17,8 @@ module.exports = {
             current: page,
             pages: Math.ceil(count / perPage)})
         
-   
+                console.log(page)
+                console.log(Math.ceil(count / perPage))
             //to then in ejs filter so that only this specific user's messages are displayed
         }catch(err){
             console.log(err)

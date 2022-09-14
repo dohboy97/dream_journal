@@ -37,9 +37,11 @@
                         <span><%= el.dream %></span>
                         <span class='del text-amber-400'> Delete </span>
                         <a href = '/journal/edit/<%=el._id%>'class = 'edit text-amber-400'>Edit</a>
-                      
+                        <a href = '/journal/view/<%=el.id%>'>View</a>
                     </li>
+                   
                 <% }) %>
+                
                 <% }else{ %>    
                     <h3>It appears that you didn't record any dreams on the selected date</h3>
                     <% } %>
@@ -54,13 +56,43 @@
                     <span><%= el.dream %></span>
                     <span class='del text-amber-400'> Delete </span>
                     <a href = '/journal/edit/<%=el._id%>'class = 'edit text-amber-400'>Edit</a>
+                    <a class = 'text-amber-400' href = '/journal/view/<%=el.id%>'>View</a>
                   
                 </li>
             <% }) %>    
             </ul>
             
           <% } %>
-    
+            <div>
+                <% if (pages > 0) { %>
+                    <ul class="pagination text-center">
+                        <% if (current == 1) { %>
+                            <li class="disabled"><a>First</a></li>
+                        <% } else { %>
+                            <li><a href="/journal/entries/1">First</a></li>
+                        <% } %>
+                        <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+                        <% if (i !== 1) { %>
+                            <li class="disabled"><a>...</a></li>
+                        <% } %>
+                        <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+                            <% if (i == current) { %>
+                                <li class="active"><a><%= i %></a></li>
+                            <% } else { %>
+                                <li><a href="/journal/entries/<%= i %>"><%= i %></a></li>
+                            <% } %>
+                            <% if (i == Number(current) + 4 && i < pages) { %>
+                                <li class="disabled"><a>...</a></li>
+                            <% } %>
+                        <% } %>
+                        <% if (current == pages) { %>
+                            <li class="disabled"><a>Last</a></li>
+                        <% } else { %>
+                            <li><a href="/journal/entries/<%= pages %>">Last</a></li>
+                        <% } %>
+                    </ul>
+                <% } %>
+            </div>
         </main>
         <script src = '/js/main.js'></script>
 </body>

@@ -62,7 +62,7 @@ app.use('/journal', journalRoute)
 app.use('/journal/edit', editRoute)
 app.use('/journal/entries',entriesRoute)
 
-const PORT = process.env.PORT || 7777
+const PORT = process.env.PORT
 app.listen(PORT || 7777, ()=>{
     console.log(`Server is running on port ${PORT}`)
 })     

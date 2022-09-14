@@ -53,7 +53,11 @@
                 
                 <li class='dream <%=el.date%>' data-id='<%=el._id%>'>
                     <span><%=el.date %></span>
+                    <%if(el.dream.length < 100){ %>
                     <span><%= el.dream %></span>
+                        <% }else{%>
+                            <span><%= el.dream.slice(0,100) + '...' %></span>
+                            <% } %>
                     <span class='del text-amber-400'> Delete </span>
                     <a href = '/journal/edit/<%=el._id%>'class = 'edit text-amber-400'>Edit</a>
                     <a class = 'text-amber-400' href = '/journal/view/<%=el.id%>'>View</a>

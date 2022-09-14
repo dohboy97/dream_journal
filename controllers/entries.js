@@ -5,13 +5,15 @@ module.exports = {
     getDream: async (req,res)=>{
         try{
 
-            //count
+            //count for pagination
             let count = await Journal.countDocuments({userId:req.user.id})
 
             let perPage = 10
             let page = req.params.page || 1
+
             const dreamEntry = await Journal.find({userId:req.user.id}).skip((perPage * page) - perPage)
             .limit(perPage)
+
             res.render('entries.ejs', {dreams: dreamEntry,
             dreamsByDate: false,
             current: page,

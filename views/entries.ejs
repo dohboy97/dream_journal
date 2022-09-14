@@ -24,11 +24,12 @@
           
   
 
-          <h3>Previous Dreams:</h3>
+          
             <a href="/home">Home</a>
 
             <% if (dreamsByDate === true){ %>
             
+                <% if (dreams.length>0){ %>
                 <% dreams.forEach( el => { %>
         
                     <li class='dream <%=el.date%>' data-id='<%=el._id%>'>
@@ -38,13 +39,16 @@
                         <a href = '/journal/edit/<%=el._id%>'class = 'edit text-amber-400'>Edit</a>
                       
                     </li>
-                <% }) %>    
+                <% }) %>
+                <% }else{ %>    
+                    <h3>It appears that you did't record any dreams on the selected date</h3>
+                    <% } %>
                 </ul>
                 <a class = 'text-amber-400 underline'href = '/journal/entries'>Back to your entire feed</a>
             <% }else{ %>
-    
+                <h3>Previous Dreams:</h3>
             <% dreams.forEach( el => { %>
-        
+                
                 <li class='dream <%=el.date%>' data-id='<%=el._id%>'>
                     <span><%=el.date %></span>
                     <span><%= el.dream %></span>

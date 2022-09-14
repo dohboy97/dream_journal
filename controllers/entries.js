@@ -1,4 +1,5 @@
 const Journal = require('../models/journal')
+const journal = require('./journal')
 
 module.exports = {
     getDream: async (req,res)=>{
@@ -23,6 +24,14 @@ module.exports = {
     },
 
     getDreamByDate: async (req,res)=>{
-        console.log(req.body.dreamDateFromJsFile)
+        try{
+            const dreamEntriesByDate = await Journal.find({
+                date: req.params.date,
+                userId:req.user.id
+            })
+            res.render('entries.ejs', {dreams: dreamEntriesByDate})
+        }catch(err){
+            console.log(err)
+        }
     }
 }

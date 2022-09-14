@@ -31,7 +31,7 @@
     
             <% dreams.forEach( el => { %>
         
-                <li class='dream' data-id='<%=el._id%>'>
+                <li class='dream <%=el.date%>' data-id='<%=el._id%>'>
                     <span><%=el.date %></span>
                     <span><%= el.dream %></span>
                     <span class='del text-amber-400'> Delete </span>

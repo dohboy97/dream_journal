@@ -13,7 +13,7 @@ function todaysDate(){
     }
     dateFromJsFile = String(dateFromJsFile)
     let dateArr = dateFromJsFile.split(' ')
-    dateFromJsFile =`${month}/${dateArr[2]}/${dateArr[3]}`
+    dateFromJsFile =`${month}-${dateArr[2]}-${dateArr[3]}`
     return dateFromJsFile
 }
 

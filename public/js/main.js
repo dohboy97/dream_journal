@@ -30,7 +30,7 @@ function todaysDate(){
     }
     dateFromJsFile = String(dateFromJsFile)
     let dateArr = dateFromJsFile.split(' ')
-    dateFromJsFile =`${month}/${dateArr[2]}/${dateArr[3]}`
+    dateFromJsFile =`${month}-${dateArr[2]}-${dateArr[3]}`
     return dateFromJsFile
 }
 
@@ -141,15 +141,9 @@ async function deleteDream(){
     //function that reads and converts the inputted date to compare with those of dreams of that user within the database. can then display that dream if custom selected by date
     let customDate = document.querySelector('input').value
     customDate = customDate.split('-')
-    customDate= `${customDate[1]}/${customDate[2]}/${customDate[0]}`
+    customDate= `${customDate[1]}-${customDate[2]}-${customDate[0]}`
     try{
-        const response = await fetch(`/journal/entries/${customDate}`,{
-            method:'get',
-            headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({
-                'dreamDateFromJsFile':customDate
-            })
-        })
+        const response = await fetch(`/journal/entries/${customDate}`)
         const data = await response.json()
         console.log(data)
     }catch(err){

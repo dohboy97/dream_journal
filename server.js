@@ -60,6 +60,6 @@ app.use('/journal/edit', editRoute)
 app.use('/journal/entries',entriesRoute)
 
  
-app.listen(process.env.PORT, ()=>{
+app.listen(process.env.PORT || 7777, ()=>{
     console.log('Server is running, you better catch it!')
 })     

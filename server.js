@@ -1,5 +1,7 @@
 const express = require ('express');
+const PORT = process.env.PORT || 7777
 const app = express()
+
 const connectDB = require('./config/database')
 const passport = require('passport')
 const session = require('express-session')
@@ -60,7 +62,7 @@ app.use('/journal', journalRoute)
 app.use('/journal/edit', editRoute)
 app.use('/journal/entries',entriesRoute)
 
-const PORT = process.env.PORT
-app.listen(PORT, ()=>{
+
+app.listen(PORT || 7777, ()=>{
     console.log(`Server is running on port ${PORT}`)
 })     

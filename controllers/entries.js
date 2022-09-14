@@ -4,9 +4,20 @@ const journal = require('./journal')
 module.exports = {
     getDream: async (req,res)=>{
         try{
-            const dreamEntry = await Journal.find({userId:req.user.id})
+
+            //count
+            let count = await Journal.find({userId:req.user.id}).count
+
+            let perPage = 10
+            let page = req.params.page || 1
+            const dreamEntry = await Journal.find({userId:req.user.id}).skip((perPage * page) - perPage)
+            .limit(perPage)
             res.render('entries.ejs', {dreams: dreamEntry,
-            dreamsByDate: false})
+            dreamsByDate: false,
+            current: page,
+            pages: Math.ceil(count / perPage)})
+        
+   
             //to then in ejs filter so that only this specific user's messages are displayed
         }catch(err){
             console.log(err)

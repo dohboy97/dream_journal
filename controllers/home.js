@@ -27,7 +27,7 @@ module.exports = {
         try{
             const todaysDream = await Journal.findOne({
                 date: todaysDate(),
-                // userId: req.user.id
+                userId: req.user.id
             })
             
         res.render('home.ejs', {dreams: todaysDream})

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href = "css/dist/output.css" rel = 'stylesheet'>
+    <link href = "/css/dist/output.css" rel = 'stylesheet'>
     <title>Dream Journal</title>
 </head>
 <body class = 'p-5 h-screen'>
@@ -15,27 +15,21 @@
         <h1 class = 'text-amber-400'>Welcome to the Dream Journal</h1>
        
         
-       
-        <!--If else statement - if todays dream exists, show it. if not, give suggestion to visit journal page-->
-
         <div>
 
-            <% if(dreams){ %>
-                <h2>Todays Dream Entry:</h2>
+            <% %>
+                <h2>View Dream:</h2>
                <p class='dream' data-id='<%=dreams._id%>'>
+                <span><%= dreams.date %></span>
                    <span><%= dreams.dream %></span>
                    <span class='del text-amber-400'> Delete </span>
                    <a href = '/journal/edit/<%=dreams._id%>'class = 'edit text-amber-400'>Edit</a>
-                   <a href = '/journal/view/<%=dreams._id%>'class = 'edit text-amber-400'>View</a>
+                   
                  
                </p>
-           <% }else{ %>  
-            <h2>It appears that you have yet to log your dream journal today. Click below to do so!</h2>
-               <a class = 'text-amber-400'href = '/journal'>Journal Page</a>
-               <% } %>  
-           </div>
-           <a class = 'text-amber-400' href = '/journal/entries'>View previous entries</a>
+           <%  %>  
+          
     </main>
-    <script src = 'js/main.js'></script>
+    <script src = '/js/main.js'></script>
 </body>
 </html>

@@ -40,5 +40,19 @@ module.exports = {
         } 
     },
 
-    
+    //for vewing
+    getDreamById: async(req,res)=>{
+        
+        try{
+            const dreamEntry = await Journal.findOne({
+                _id: req.params.id,
+                userId:req.user.id
+            })
+            console.log(dreamEntry)
+            res.render('viewer.ejs', {dreams:dreamEntry})
+            
+        }catch(err){
+            console.log(err)
+        }
+    },
 }

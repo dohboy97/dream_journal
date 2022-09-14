@@ -9,6 +9,9 @@ const ensureAuth  = require('../middleware/auth')
 
 router.get('/', ensureAuth.ensureAuth,  journalController.getDream)
 
+router.get('/view/:id', ensureAuth.ensureAuth,  journalController.getDreamById)
+
+
 router.post('/createDream', journalController.createDream)
 
 router.delete('/deleteDream', journalController.deleteDream)

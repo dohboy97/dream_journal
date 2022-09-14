@@ -21,4 +21,8 @@ module.exports = {
         console.log(err)
         } 
     },
+
+    getDreamByDate: async (req,res)=>{
+        console.log(req.body.dreamDateFromJsFile)
+    }
 }

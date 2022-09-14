@@ -9,10 +9,10 @@ const ensureAuth  = require('../middleware/auth')
 
 router.get('/', ensureAuth.ensureAuth, entriesController.getDream)
 
-
+router.get('/:date', entriesController.getDreamByDate)
 
 router.delete('/deleteDream', entriesController.deleteDream)
 
 
 
-module.exports = router
+module.exports = router 

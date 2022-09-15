@@ -15,6 +15,7 @@ const homeRoute = require('./routes/home')
 const journalRoute = require('./routes/journal')
 const editRoute = require ('./routes/edit')
 const entriesRoute = require('./routes/entries')
+const infoRoute = require('./routes/info')
 const nocache = require('nocache')
 app.use(nocache())
 
@@ -61,6 +62,7 @@ app.use('/home', homeRoute)
 app.use('/journal', journalRoute)
 app.use('/journal/edit', editRoute)
 app.use('/journal/entries',entriesRoute)
+app.use('/info', infoRoute)
 
 const PORT = process.env.PORT
 app.listen(PORT || 7777, ()=>{

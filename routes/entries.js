@@ -7,7 +7,7 @@ const entriesController = require('../controllers/entries')
 
 const ensureAuth  = require('../middleware/auth')
 
-router.get('/:page', ensureAuth.ensureAuth, entriesController.getDream)
+router.get('/page/:page', ensureAuth.ensureAuth, entriesController.getDream)
 
 router.get('/:date', entriesController.getDreamByDate)
 

@@ -46,7 +46,7 @@
                     <h3>It appears that you didn't record any dreams on the selected date</h3>
                     <% } %>
                 </ul>
-                <a class = 'text-amber-400 underline'href = '/journal/entries'>Back to your entire feed</a>
+                <a class = 'text-amber-400 underline'href = '/journal/entries/1'>Back to your entire feed</a>
             <% }else{ %>
                 <h3>Previous Dreams:</h3>
             <% dreams.forEach( el => { %>
@@ -63,17 +63,16 @@
                     <a class = 'text-amber-400' href = '/journal/view/<%=el.id%>'>View</a>
                   
                 </li>
+              
             <% }) %>    
             </ul>
-            
-          <% } %>
             <div>
                 <% if (pages > 0) { %>
                     <ul class="pagination text-center">
                         <% if (current == 1) { %>
                             <li class="disabled"><a>First</a></li>
                         <% } else { %>
-                            <li><a href="/journal/entries/1">First</a></li>
+                            <li><a href="/journal/entries/page/1">First</a></li>
                         <% } %>
                         <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
                         <% if (i !== 1) { %>
@@ -83,7 +82,7 @@
                             <% if (i == current) { %>
                                 <li class="active"><a><%= i %></a></li>
                             <% } else { %>
-                                <li><a href="/journal/entries/<%= i %>"><%= i %></a></li>
+                                <li><a href="/journal/entries/page/<%= i %>"><%= i %></a></li>
                             <% } %>
                             <% if (i == Number(current) + 4 && i < pages) { %>
                                 <li class="disabled"><a>...</a></li>
@@ -92,11 +91,13 @@
                         <% if (current == pages) { %>
                             <li class="disabled"><a>Last</a></li>
                         <% } else { %>
-                            <li><a href="/journal/entries/<%= pages %>">Last</a></li>
+                            <li><a href="/journal/entries/page/<%= pages %>">Last</a></li>
                         <% } %>
                     </ul>
                 <% } %>
             </div>
+          <% } %>
+           
         </main>
         <script src = '/js/main.js'></script>
 </body>

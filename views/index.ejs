@@ -10,26 +10,40 @@
 <body class = 'p-5 h-screen'>
     
 
-    <main class = 'mx-auto bg-indigo-400 h-3/4 rounded-md p-1 md:w-3/4 w-fit my-auto'>
-        <div class = 'flex w-full justify-center md:justify-end lg:justify-end'>
+    <main class = 'mx-auto bg-indigo-400 h-5/6 rounded-md md:w-5/6 lg:w-3/4 w-fit my-auto'>
+        <div class = 'flex w-full justify-between border-b-1 border-b-indigo-600 h-24 items-center'>
+            <div class = 'flex flex-col pl-5 w-14 h-16'>
+                <div class = 'flex justify-end'>
+                    <span>Z</span>
+                </div>
+                <div class = 'flex justify-center'>
+                    <span class = 'text-sm'>Z</span>
+                </div>
+                <div class = 'flex justify-start'>
+                    <span class ='text-xs'>z</span>
+                </div>
+
+            </div>
         <% if(authentic){ %>
-            <nav class = 'flex justify-around w-72 md:w-80'>
-            <a class = 'text-amber-400 underline' href = '/logout'>Logout</a>
-            <a class = 'text-amber-400 underline' href = '/home'>Dashboard</a>
-            <a class = 'text-amber-400 underline' href = '/entries/1'>Entries</a>
-            <a class = 'text-amber-400 underline' href = '/info'>More Info</a>
+            <nav class = 'flex justify-around w-56 md:w-60 pr-4'>
+            <a class = 'text-amber-400 hover:underline' href = '/logout'>Logout</a>
+            <a class = 'text-amber-400 hover:underline' href = '/home'>Dashboard</a>
+            
+            <a class = 'text-amber-400 hover:underline' href = '/info'>Info</a>
             </nav>
             <% } else{ %>
 
-        <nav class = 'flex justify-around w-48 md:w-60'>
-        <a class = 'text-amber-400 underline' href = '/signup'>Signup</a>
-        <a class = 'text-amber-400 underline' href="/login">Login</a>
-        <a class = 'text-amber-400 underline' href = '/info'>More Info</a>
+        <nav class = 'flex justify-around w-52 md:w-60 pr-4'>
+        <a class = 'text-amber-400 hover:underline' href = '/signup'>Signup</a>
+        <a class = 'text-amber-400 hover:underline' href="/login">Login</a>
+        <a class = 'text-amber-400 hover:underline' href = '/info'>More Info</a>
         </nav>
         <% } %>
         </div>
-        <div>
-            <h1 class = 'text-amber-400'>Welcome to Your Dream Journal</h1>
+        
+        <section class = 'flex flex-col pt-4 pr-4 pl-4'>
+            <div>
+            <h1 class = 'text-amber-400 text-lg pb-4'>Welcome to Your Dream Journal</h1>
       <h2>Why Keep a Dream Journal?</h2>
     <p>We dream every night. But most people forget what they dreamt about by the time their feet hit the floor. By journaling your dreams first thing in the morning, you improve dream retention, vividness, and lucidity. </p>
 
@@ -40,6 +54,7 @@
         <li>Using your Dreams as a Source of Inspiration or Creativity</li>
     </ul>
     </div>
+    </section>
     </main>
     <script src = 'js/main.js'></script>
 </body>

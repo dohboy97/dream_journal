@@ -9,18 +9,20 @@
 </head>
 <body class = 'p-5 h-screen'>
     
+     
     
-    <main class = 'mx-auto bg-indigo-400 h-3/4 rounded-md p-1'>
-        <h1 class = 'text-amber-400'>Welcome to Your Dream Journal</h1>
+    <main class = 'mx-auto bg-indigo-400 h-3/4 rounded-md p-1 md:w-3/4 w-fit my-auto'>
+        
         <% if(authentic){ %>
-            <a class = 'text-amber-400 underline' href = '/logout'>logout</a>
-            <a class = 'text-amber-400 underline' href = '/home'>home</a>
+            <a class = 'text-amber-400 underline' href = '/logout'>Logout</a>
+            <a class = 'text-amber-400 underline' href = '/home'>Home</a>
 
             <% } else{ %>
-       <a class = 'text-amber-400 underline' href="/login">login</a>
+       <a class = 'text-amber-400 underline' href="/login">Login</a>
         <a class = 'text-amber-400 underline' href = '/signup'>Signup</a>
         <% } %>
         <div>
+            <h1 class = 'text-amber-400'>Welcome to Your Dream Journal</h1>
       <h2>Why Keep a Dream Journal?</h2>
     <p>We dream every night. But most people forget what they dreamt about by the time their feet hit the floor. By journaling your dreams first thing in the morning, you improve dream retention, vividness, and lucidity. </p>
 

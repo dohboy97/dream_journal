@@ -11,9 +11,9 @@
     
 
     <main class = 'mx-auto bg-indigo-400 h-3/4 rounded-md p-1 md:w-3/4 w-fit my-auto'>
-        <div class = 'flex justify-end w-full'>
+        <div class = 'flex w-full justify-center md:justify-end lg:justify-end'>
         <% if(authentic){ %>
-            <nav class = 'flex justify-around w-72'>
+            <nav class = 'flex justify-around w-72 md:w-80'>
             <a class = 'text-amber-400 underline' href = '/logout'>Logout</a>
             <a class = 'text-amber-400 underline' href = '/home'>Dashboard</a>
             <a class = 'text-amber-400 underline' href = '/entries/1'>Entries</a>
@@ -21,7 +21,7 @@
             </nav>
             <% } else{ %>
 
-        <nav class = 'flex justify-around w-48'>
+        <nav class = 'flex justify-around w-48 md:w-60'>
         <a class = 'text-amber-400 underline' href = '/signup'>Signup</a>
         <a class = 'text-amber-400 underline' href="/login">Login</a>
         <a class = 'text-amber-400 underline' href = '/info'>More Info</a>

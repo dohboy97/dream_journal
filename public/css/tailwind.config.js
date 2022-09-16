@@ -10,6 +10,9 @@ module.exports = {
       '4': '4px',
       '6': '6px',
       '8': '8px',
+    },
+    minHeight: {
+      '5/6': '85%',
     }
   },
   plugins: [],

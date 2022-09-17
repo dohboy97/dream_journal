@@ -10,7 +10,7 @@
 <body class = 'm-5 h-screen'>
     
 
-    <main class = 'mx-auto bg-indigo-400 h-fit min-h-5/6 rounded-md md:w-5/6 lg:w-3/4 w-fit my-auto pb-12'>
+    <main class = 'mx-auto bg-indigo-400 h-fit min-h-5/6 rounded-lg md:w-5/6 lg:w-3/4 w-fit my-auto pb-12'>
         <div class = 'flex w-full justify-between border-b-1 border-b-indigo-600 h-24 items-center'>
             <div class = 'flex flex-col pl-5 w-14 h-16'>
                 <div class = 'flex justify-end'>
@@ -41,23 +41,39 @@
         <% } %>
         </div>
         
-        <section class = 'flex flex-col pt-8 pr-4 pl-4 h-full'>
+        <section class = 'flex flex-col sm:flex-row pt-8 pr-4 pl-4 h-full'>
            
             
       
    
-    <div class = 'w-full sm:w-2/3 text-center sm:text-left h-3/4 sm:mx-auto sm:pt-12'>
-        <h1 class = 'text-amber-400 text-4xl pb-8 sm:pb-20'>Welcome to Your Dream Journal</h1>
+    <div class = 'w-full sm:text-left sm:mx-auto sm:pt-4'>
+        <h1 class = 'text-amber-400 text-4xl pb-8 sm:pb-8'>Welcome to Your Dream Journal</h1>
         
-        <div class = 'flex flex-col h-4/5 justify-around items-around shrink sm:pl-8'>
-            <span class = 'text-xl hover:text-2xl ease-in-out cursor-pointer duration-300 pb-6'>Track your Dreams Daily</span>  
-            <span class = 'text-xl hover:text-2xl ease-in-out cursor-pointer duration-300 pb-6'>Drastically Improve Dream Retention</span>      
-        <span class = 'text-xl hover:text-2xl ease-in-out cursor-pointer duration-300 pb-6'>Learn how to Lucid Dream</span>
-        <span class = 'text-xl hover:text-2xl ease-in-out cursor-pointer duration-300 pb-6'>Recognize Recurring Dreams or Symbols</span>
+        
+     
+
+        <div class = 'flex flex-col h-4/5 justify-around items-around shrink w-2/3'>
+            <div>
+            <span class = 'text-xl hover:text-2xl ease-in-out cursor-pointer duration-300'>Track your Dreams Daily</span>
+            <p>Keep a comprehensive log of all your dreams by date - improving retention and mindfulness.</p>
+            </div>
+        <div>
+        <span class = 'text-xl hover:text-2xl ease-in-out cursor-pointer duration-300'>Learn how to Lucid Dream</span>
+        <p>Learn how to gain control of your sleeping mind through journaling and practice</p>
+        </div>
+        <div>
+        <span class = 'text-xl hover:text-2xl ease-in-out cursor-pointer duration-300'>Recognize Recurring Dreams or Symbols</span>
+        <p>Compare the symbols and themes you notice in your dreams to their supposed meanings in order to decipher more about yourself</p>
+        </div>
+        <div>
         <span class = 'text-xl hover:text-2xl ease-in-out cursor-pointer duration-300'>Use your Dreams as a Source of Inspiration and Creativity</span>
+        <p>Some of the greatest inventions in history - from the theory of relativity to the periodic table - supposedly originated from dreams</p>
         </div>
     </div>
-    
+    </div>
+    <div class = 'right flex items-center'>
+        <img class = 'rounded-xl' src = 'imgs/ScalyGraveGecko-size_restricted.gif'>
+    </div>
     </section>
     </main>
     <script src = 'js/main.js'></script>

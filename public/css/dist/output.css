@@ -559,6 +559,10 @@ video {
   margin: 1.25rem;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -693,6 +697,10 @@ video {
   height: 9rem;
 }
 
+.h-2\/3 {
+  height: 66.666667%;
+}
+
 .min-h-5\/6 {
   min-height: 85%;
 }
@@ -741,6 +749,10 @@ video {
 
 .w-5\/6 {
   width: 83.333333%;
+}
+
+.w-32 {
+  width: 8rem;
 }
 
 .shrink {
@@ -981,6 +993,10 @@ body{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
+}
+
 .hover\:text-2xl:hover {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -1114,6 +1130,18 @@ body{
     width: 18rem;
   }
 
+  .md\:w-1\/3 {
+    width: 33.333333%;
+  }
+
+  .md\:w-1\/2 {
+    width: 50%;
+  }
+
+  .md\:w-2\/3 {
+    width: 66.666667%;
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
@@ -1135,5 +1163,9 @@ body{
 @media (min-width: 1024px) {
   .lg\:w-3\/4 {
     width: 75%;
+  }
+
+  .lg\:w-1\/2 {
+    width: 50%;
   }
 }

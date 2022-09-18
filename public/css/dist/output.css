@@ -565,6 +565,21 @@ video {
   margin-bottom: auto;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.-my-10 {
+  margin-top: -2.5rem;
+  margin-bottom: -2.5rem;
+}
+
+.-my-20 {
+  margin-top: -5rem;
+  margin-bottom: -5rem;
+}
+
 .flex {
   display: flex;
 }
@@ -623,6 +638,14 @@ video {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+}
+
+.h-4\/6 {
+  height: 66.666667%;
+}
+
+.h-36 {
+  height: 9rem;
 }
 
 .min-h-5\/6 {
@@ -842,6 +865,14 @@ body{
 
   .sm\:h-full {
     height: 100%;
+  }
+
+  .sm\:h-screen {
+    height: 100vh;
+  }
+
+  .sm\:h-5\/6 {
+    height: 83.333333%;
   }
 
   .sm\:w-2\/3 {

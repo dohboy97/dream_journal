@@ -7,8 +7,8 @@
     <link href = "css/dist/output.css" rel = 'stylesheet'>
     <title>Document</title>
 </head>
-<body class = 'p-5 h-screen'>
-    <main class = 'h-3/4 mx-auto bg-indigo-400 rounded-md p-1'>
+<body class = 'flex h-screen'>
+    <main class = 'mx-auto bg-indigo-400 h-1/2 rounded-lg md:w-2/3 lg:w-1/2 w-fit px-5 my-auto opacity-80 flex flex-col items-center justify-around'>
     <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>
@@ -19,10 +19,13 @@
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
     <% } %>
-    <form action="/login" method="POST">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit">
+    <h1 class = 'text-3xl text-amber-400'>Welcome Back</h1>
+    <form class = 'flex flex-col justify-around items-center w-full h-2/3' action="/login" method="POST">
+       
+
+        <input class = 'h-10' type="email" name="email" placeholder="Email">
+        <input class = 'h-10' type="password" name="password" placeholder="Password">
+        <input class = 'h-8 bg-amber-400 hover:bg-amber-200 w-48 rounded-xl hover:cursor-pointer' type="submit">
         
     </form>
     </main>

@@ -613,6 +613,10 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .block {
   display: block;
 }
@@ -1077,6 +1081,10 @@ body{
 
   .sm\:pb-0 {
     padding-bottom: 0px;
+  }
+
+  .sm\:pt-8 {
+    padding-top: 2rem;
   }
 
   .sm\:text-left {

@@ -1,81 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href = "css/dist/output.css" rel = 'stylesheet'>
+    <link href="css/dist/output.css" rel='stylesheet'>
     <title>Dream Journal</title>
 </head>
-<body class = 'm-5 min-h-screen'>
-    
 
-    <main class = 'mx-auto bg-indigo-400 h-full sm:h-screen rounded-lg md:w-5/6 lg:w-3/4 w-fit my-auto pb-12'>
-        <div class = 'flex w-full justify-between border-b-1 border-b-indigo-600 h-36 items-center'>
-            <div class = 'flex flex-col pl-5 w-14 h-16'>
-                <div class = 'flex justify-end'>
+<body class='m-5 flex min-h-screen'>
+
+
+    <main class='mx-auto bg-indigo-400 h-full sm:h-screen rounded-lg md:w-5/6 lg:w-3/4 w-fit my-auto pb-12 opacity-80 flex flex-col'>
+        <div class='flex w-full justify-between border-b-1 border-b-indigo-600 h-36 items-center'>
+            <div class='flex flex-col pl-5 w-14 h-16'>
+                <div class='flex justify-end'>
                     <span>Z</span>
                 </div>
-                <div class = 'flex justify-center'>
-                    <span class = 'text-sm'>Z</span>
+                <div class='flex justify-center'>
+                    <span class='text-sm'>Z</span>
                 </div>
-                <div class = 'flex justify-start'>
-                    <span class ='text-xs'>z</span>
+                <div class='flex justify-start'>
+                    <span class='text-xs'>z</span>
                 </div>
 
             </div>
-        <% if(authentic){ %>
-            <nav class = 'flex justify-around w-56 md:w-60 pr-4'>
-            <a class = 'text-amber-400 hover:underline' href = '/logout'>Logout</a>
-            <a class = 'text-amber-400 hover:underline' href = '/home'>Dashboard</a>
-            
-            <a class = 'text-amber-400 hover:underline' href = '/info'>Info</a>
-            </nav>
-            <% } else{ %>
+            <% if(authentic){ %>
+                <nav class='flex justify-around w-56 md:w-60 pr-4'>
+                    <a class='text-amber-400 hover:underline' href='/logout'>Logout</a>
+                    <a class='text-amber-400 hover:underline' href='/home'>Dashboard</a>
 
-        <nav class = 'flex justify-around w-52 md:w-60 pr-4'>
-        <a class = 'text-amber-400 hover:underline' href = '/signup'>Signup</a>
-        <a class = 'text-amber-400 hover:underline' href="/login">Login</a>
-        <a class = 'text-amber-400 hover:underline' href = '/info'>More Info</a>
-        </nav>
-        <% } %>
+                    <a class='text-amber-400 hover:underline' href='/info'>Info</a>
+                </nav>
+                <% } else{ %>
+
+                    <nav class='flex justify-around w-52 md:w-60 pr-4'>
+                        <a class='text-amber-400 hover:underline' href='/signup'>Signup</a>
+                        <a class='text-amber-400 hover:underline' href="/login">Login</a>
+                        <a class='text-amber-400 hover:underline' href='/info'>More Info</a>
+                    </nav>
+                    <% } %>
         </div>
-        
-    
-    <section class = 'flex flex-col sm:flex-row pt-8 pr-4 pl-4 sm:h-5/6'>
-           
-        <div class = 'w-full sm:text-left sm:mx-auto sm:pt-4 h-5/6 flex flex-col justify-between items-around sm:pr-6'>
-            <h1 class = 'text-amber-400 text-5xl pb-8 sm:pb-0'>Welcome to Your Dream Journal</h1>
-        
-            
-                <div class = 'md:w-3/4'>
-                <span class = 'text-3xl text-amber-400'>Track your Dreams Daily</span>
-                <p class = 'text-xl'>Keep a comprehensive log of all your dreams by date - improving retention and mindfulness</p>
+
+
+        <section class='flex flex-col sm:flex-row pt-8 pr-4 pl-4 sm:h-5/6 overflow-hidden'>
+
+            <div
+                class='w-full sm:text-left sm:mx-auto sm:pt-4 h-5/6 flex flex-col justify-between items-around sm:pr-6'>
+                <h1 class='text-amber-400 text-5xl pb-8 sm:pb-0'>Welcome to Your Dream Journal</h1>
+
+
+                <div class='md:w-3/4 my-8'>
+                    <span class='text-3xl text-amber-400'>Track your Dreams Daily</span>
+                    <p class='text-xl'>Keep a comprehensive log of all your dreams by date - improving retention and
+                        mindfulness</p>
                 </div>
-                <div class = 'md:w-3/4'>
-                    <span class = 'text-xl text-3xl text-amber-400'>Recognize Recurring Dreams or Symbols</span>
-                    <p class = 'text-xl'>Compare the symbols and themes you notice in your dreams to their supposed meanings in order to decipher more about yourself</p>
-                    </div>
-                
-        
-            
-        </div>
-        <div class = 'w-full right flex flex-col justify-around items-center h-full sm:pl-6'>
-            <img class = 'rounded-xl w-3/4' src = 'imgs/ScalyGraveGecko-size_restricted.gif'>
-            
-            <div class = 'md:w-3/4'>
-                <span class = 'text-3xl text-amber-400'>Learn how to Lucid Dream</span>
-                <p class = 'text-xl'>Learn how to gain control of your sleeping mind through journaling and practice</p>
+                <div class='md:w-3/4 my-8 sm:my-0'>
+                    <span class='text-xl text-3xl text-amber-400'>Recognize Recurring Dreams or Symbols</span>
+                    <p class='text-xl'>Compare the symbols and themes you notice in your dreams to their supposed
+                        meanings in order to decipher more about yourself</p>
                 </div>
-            <div class = md:w-3/4>
-                <span class = 'text-xl text-3xl text-amber-400'>Use your Dreams as a Source of Inspiration</span>
-                <p class = 'text-xl'>Some of the greatest inventions in history - from the theory of relativity to the periodic table - supposedly originated from dreams</p>
+
+
+
+            </div>
+            <div class='w-full right flex flex-col justify-around items-center h-full sm:pl-6'>
+                <img class='rounded-xl w-3/4 hidden sm:block' src='imgs/ScalyGraveGecko-size_restricted.gif'>
+
+                <div class='md:w-3/4 my-8 sm:my-0'>
+                    <span class='text-3xl text-amber-400'>Learn how to Lucid Dream</span>
+                    <p class='text-xl'>Learn how to gain control of your sleeping mind through journaling and practice
+                    </p>
+                </div>
+                <div class='md:w-3/4 my-8 sm:my-0'>
+                    <span class='text-xl text-3xl text-amber-400'>Use your Dreams as a Source of Inspiration</span>
+                    <p class='text-xl'>Some of the greatest inventions in history - from the theory of relativity to the
+                        periodic table - supposedly originated from dreams</p>
+                </div>
+                <img class='rounded-xl w-3/4 sm:hidden block' src='imgs/ScalyGraveGecko-size_restricted.gif'>
             </div>
 
-        </div>
-    
-    </section>
+        </section>
     </main>
-    <script src = 'js/main.js'></script>
+    <script src='js/main.js'></script>
 </body>
+
 </html>

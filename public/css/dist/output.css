@@ -594,6 +594,10 @@ video {
   margin-bottom: 2rem;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .block {
   display: block;
 }
@@ -758,6 +762,14 @@ video {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
 }
 
 .text-clip {
@@ -1042,6 +1054,11 @@ body{
   .sm\:text-left {
     text-align: left;
   }
+
+  .sm\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1057,6 +1074,10 @@ body{
     width: 75%;
   }
 
+  .md\:w-72 {
+    width: 18rem;
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
@@ -1067,6 +1088,11 @@ body{
 
   .md\:pl-6 {
     padding-left: 1.5rem;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 

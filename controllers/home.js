@@ -26,14 +26,16 @@ module.exports = {
     getHome:async(req,res)=>{
        
         try{
-            const todaysDream = await Journal.findOne({
+            let todaysDream = await Journal.findOne({
                 date: todaysDate(),
                 userId: req.user.id
             })
             const userName = await User.findOne({
                 userName:req.user.userName
             })
-            
+            if(todaysDream.dream.length>50){
+           todaysDream.dream = todaysDream.dream.slice(0,50) + '...'
+            }
         res.render('home.ejs', {dreams: todaysDream, user:userName, date:todaysDate()})
         }catch(err){
             console.log(err)

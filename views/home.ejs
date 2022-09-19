@@ -42,25 +42,34 @@
        
         <!--If else statement - if todays dream exists, show it. if not, give suggestion to visit journal page-->
 
-        <div>
-            <h1 class = 'text-amber-400 text-5xl'>Dashboard</h1>
-            <h2 class = 'text-amber-400 text-3xl'>Hello <%=user.userName%></h2>
-            <h3> <%= date %></h3>
+        <div class = 'min-h-2/3 flex flex-col justify-around items-center'>
+            <div class = 'flex flex-col justify-center items-center mb-10'>
+            <h1 class = 'text-amber-400 text-5xl mb-10'>Dashboard</h1>
+            <h2 class = 'text-amber-400 text-3xl mb-10'>Hello <%=user.userName%></h2>
+            <h3 class = 'text-2xl'> <%= date %></h3>
+                </div>
+            <div class = 'h-full text-2xl sm:w-1/4 flex flex-col items-center'>
             <% if(dreams){ %>
                 <h2>Todays Dream Entry:</h2>
-               <p class='dream' data-id='<%=dreams._id%>'>
+               <div class='dream flex flex-col items-center' data-id='<%=dreams._id%>'>
+                    <div>
                    <span><%= dreams.dream %></span>
+                   </div>
+                   <div>
                    <span class='del text-amber-400'> Delete </span>
                    <a href = '/journal/edit/<%=dreams._id%>'class = 'edit text-amber-400'>Edit</a>
-                   <a href = '/journal/view/<%=dreams._id%>'class = 'edit text-amber-400'>View</a>
-                 
-               </p>
+                   <a class = 'underline hover:text-amber-200 hover:cursor-pointer text-2xl' href = '/journal/view/<%=dreams._id%>'class = 'edit text-amber-400'>View</a>
+                   </div>
+               </div>
+               
            <% }else{ %>  
             <h2>It appears that you have yet to log your dream journal today. Click below to do so!</h2>
-               <a class = 'text-amber-400'href = '/journal'>Journal Page</a>
+               <a class = 'text-amber-400 underline hover:text-amber-200 hover:cursor-pointer text-2xl'href = '/journal'>Journal Page</a>
                <% } %>  
+            </div>
+            <a class = 'underline hover:text-amber-200 hover:cursor-pointer text-2xl text-amber-400'  href = '/journal/entries/page/1'>View previous entries</a>
            </div>
-           <a class = 'text-amber-400' href = '/journal/entries/page/1'>View previous entries</a>
+          
         </section>
     </main>
     <script src = 'js/main.js'></script>

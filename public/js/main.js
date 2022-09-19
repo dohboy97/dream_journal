@@ -118,7 +118,7 @@ async function updateDreamById(){
 
 async function deleteDream(){
     
-    const dreamId = this.parentNode.dataset.id 
+    const dreamId = this.parentNode.parentNode.dataset.id 
     console.log(dreamId)
     try{
         const response = await fetch ('/journal/deleteDream', {

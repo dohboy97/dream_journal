@@ -1,4 +1,5 @@
 const Journal = require('../models/journal')
+const User = require('../models/User')
 
 //connecting to database to display todaysdream IF it has been filled out
 
@@ -29,8 +30,11 @@ module.exports = {
                 date: todaysDate(),
                 userId: req.user.id
             })
+            const userName = await User.findOne({
+                userName:req.user.userName
+            })
             
-        res.render('home.ejs', {dreams: todaysDream})
+        res.render('home.ejs', {dreams: todaysDream, user:userName, date:todaysDate()})
         }catch(err){
             console.log(err)
         }

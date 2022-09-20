@@ -8,30 +8,57 @@
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <title>Dream Journal</title>
 </head>
-<body class = 'p-5 h-screen'>
+<body class = 'flex mx-6 min-h-screen'>
     
-    <main class = 'h-3/4 mx-auto bg-indigo-400 rounded-md p-1'>
-        
-        <div class = 'h-1/2'>
-            <a href = '/logout'>Log Out</a>
-            <h1 class = 'text-amber-400'>Welcome to the Dream Journal Entry Page</h1>
-        
-        <h2>Journal entry</h2>
+    <main class = 'mx-auto bg-indigo-400 h-full h-screen rounded-lg md:w-5/6 lg:w-3/4 w-full my-auto opacity-80 flex flex-col overflow-y-auto'>
+
+        <div class='flex w-full justify-between border-b-1 border-b-indigo-600 h-36 items-center'>
+            <div class='flex flex-col pl-5 w-14 h-16'>
+                <div class='flex justify-end'>
+                    <span>Z</span>
+                </div>
+                <div class='flex justify-center'>
+                    <span class='text-sm'>Z</span>
+                </div>
+                <div class='flex justify-start'>
+                    <span class='text-xs'>z</span>
+                </div>
+                
+            </div>
+            
+            <nav class='flex justify-around w-56 md:w-60 pr-4'>
+                
+                <a class='text-amber-400 hover:underline md:text-xl' href='/'>Home</a>
+
+                <a class='text-amber-400 hover:underline md:text-xl' href='/info'>Info</a>
+                <a class='text-amber-400 hover:underline md:text-xl' href='/logout'>Logout</a>
+            </nav>
+
+            <!--main section and quill-->
        
-            <div class = 'h-1/2'>
-            <div id = 'editor' class = 'h-full' name = 'dreamEntry'></div>
-            <button class = 'submitBtn bg-amber-400' type = 'submit'>Submit</button> 
+       </div>
+        
+       <section class='flex flex-col pt-8 pr-4 pl-4 h-full overflow-y-auto items-center'>
+
+           
+        
+        <h1 class = 'text-amber-400 text-5xl mb-14 mt-8'>Journal Entry</h2>
+            <input class = 'h-12 mb-6 w-5/6 md:w-1/3 text-center' placeholder="Title">
+            <div class = 'h-1/2 w-full sm:w-5/6 md:w-3/4 lg:w-1/2 flex flex-col'>
+            <div id = 'editor' class = 'h-1/2 w-full overflow-y-auto' name = 'dreamEntry'></div>
+            <button class = 'submitBtn bg-amber-400 mt-8 w-48 rounded-lg mx-auto h-16 hover:bg-amber-200 hover:cursor-pointer' type = 'submit'>Submit</button> 
             </div>
            
-        </div>
+           
+ 
        
-        <div class = 'h-1/2'>
-            <a href = '/home' class = 'text-amber-400'>Home</a>
+      </section>
+            
 
             
 
          
-            </div>
+            
     </main>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 

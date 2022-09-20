@@ -62,7 +62,7 @@ Array.from(submitBtn).forEach(element=>{
 
 async function createDream(){
     const dreamTextFromJsFile = quill.getText(0,)
-
+    const dreamTitleFromJSFile = document.querySelector('#title').value
         //see below a variable for storing the date and time upon submission
 
     let dateFromJsFile = todaysDate()
@@ -75,6 +75,7 @@ async function createDream(){
             headers: {"Content-type": "application/json"},
             body: JSON.stringify({
                 'dream': dreamTextFromJsFile,
+                'title':dreamTitleFromJSFile,
                 'date': dateFromJsFile,
                 
 

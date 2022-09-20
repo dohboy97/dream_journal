@@ -16,13 +16,14 @@ module.exports = {
             
             await Journal.create({
                 dream: req.body.dream,
+                title:req.body.title,
                 date: req.body.date,
                 userId: req.user.id
                 
             })
            
             console.log('created dream')
-            console.log(req.body.date)
+            console.log(req.body.title)
             res.redirect('/home')
         }catch(err){
             console.log(err)

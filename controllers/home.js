@@ -33,8 +33,11 @@ module.exports = {
             const userName = await User.findOne({
                 userName:req.user.userName
             })
-            if(todaysDream.dream.length>50){
-           todaysDream.dream = todaysDream.dream.slice(0,50) + '...'
+            //causes error if todaysDream doesnt exist yet
+            if(todaysDream){
+                if(todaysDream.dream.length > 50){
+                todaysDream.dream = todaysDream.dream.slice(0,50) + '...'
+                }
             }
         res.render('home.ejs', {dreams: todaysDream, user:userName, date:todaysDate()})
         }catch(err){

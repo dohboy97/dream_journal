@@ -57,27 +57,43 @@
             <% if (dreamsByDate === true){ %>
             
                 <% if (dreams.length>0){ %>
+                    <h2 class = 'text-2xl mb-6'>Dream Log from <%= dreams[0].date %></h2>
+                    <table class="table-fixed h-1/5">
+                        <thead>
+                          <tr>
+                           
+                            <th class = 'border-indigo-600 border-2'>Title</th>
+                            <th class = 'border-indigo-600 border-2 w-1/2'>Dream</th>
+                            <th class = 'border-indigo-600 border-2'>View</th>
+                          </tr>
+                        </thead>
+                        <tbody>
                 <% dreams.forEach( el => { %>
-        
-                    <li class='dream <%=el.date%>' data-id='<%=el._id%>'>
-                        <span><%=el.date %></span>
-                        <%if(el.dream.length < 100){ %>
-                            <span><%= el.dream %></span>
-                                <% }else{%>
-                                    <span><%= el.dream.slice(0,50) + '...' %></span>
-                                    <% } %>
-                        <span class='del text-amber-400'> Delete </span>
-                        <a href = '/journal/edit/<%=el._id%>'class = 'edit text-amber-400'>Edit</a>
-                        <a href = '/journal/view/<%=el.id%>'>View</a>
-                    </li>
                    
+                    
+        
+                    <tr class='dream <%=el.date%> border-indigo-600 border-2' data-id='<%=el._id%>'>
+                       
+                        <%if(el.dream.length < 100){ %>
+                            <td class = 'text-center border-indigo-600 border-r-2'><%=el.title %></td>
+                            <td class = 'border-indigo-600 border-r-2'><%= el.dream %></td>
+                                <% }else{%>
+                            <td class = 'border-indigo-600 border-r-2'><%= el.dream.slice(0,50) + '...' %></td>
+                                    <% } %>
+                     
+                          <td class = 'text-center border-indigo-600 border-l-2 hover:text-amber-200 '><a class = 'text-amber-400 hover:text-amber-200 hover:underline' href = '/journal/view/<%=el.id%>'>See Dream</a></td>
+                        </tr>
+                   
+
                 <% }) %>
+            </tbody>
+            </table>
                 
                 <% }else{ %>    
                     <h3>It appears that you didn't record any dreams on the selected date</h3>
                     <% } %>
                 </ul>
-                <a class = 'text-amber-400 underline'href = '/journal/entries/page/1'>Back to your entire feed</a>
+                <a class = 'text-amber-400 underline mt-6 mx-auto text-2xl hover:cursor-pointer hover:text-amber-200'href = '/journal/entries/page/1'>Back to your entire feed</a>
             <% }else{ %>
                 <h3 class = 'text-2xl'>Previous Dreams:</h3>
                 <table class="table-fixed ">
@@ -103,7 +119,7 @@
                    
                     <td class = 'text-center border-indigo-600 border-l-2 hover:text-amber-200 '><a class = 'text-amber-400 hover:text-amber-200 hover:underline' href = '/journal/view/<%=el.id%>'>See Dream</a></td>
                   
-                        </r>
+                        </tr>
               
             <% }) %>    
             

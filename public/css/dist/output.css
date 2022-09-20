@@ -607,6 +607,10 @@ video {
   margin-top: 2.5rem;
 }
 
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
 .block {
   display: block;
 }
@@ -665,6 +669,10 @@ video {
 
 .h-8 {
   height: 2rem;
+}
+
+.h-1\/5 {
+  height: 20%;
 }
 
 .w-fit {

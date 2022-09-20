@@ -11,8 +11,13 @@ module.exports = {
             let perPage = 10
             let page = req.params.page || 1
 
-            const dreamEntry = await Journal.find({userId:req.user.id}).skip((perPage * page) - perPage)
+            //trying to sort the entries by date for renderig in the log
+
+            const dreamEntry = await Journal.find({userId:req.user.id}).sort({date:-1}).skip((perPage * page) - perPage)
             .limit(perPage)
+
+            //const dreamEntry = await Journal.find({userId:req.user.id}).skip((perPage * page) - perPage)
+            //.limit(perPage)
 
             res.render('entries.ejs', {dreams: dreamEntry,
             dreamsByDate: false,

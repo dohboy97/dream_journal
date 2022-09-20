@@ -7,27 +7,54 @@
     <link href = "css/dist/output.css" rel = 'stylesheet'>
     <title>Dream Journal</title>
 </head>
-<body class = 'p-5 h-screen'>
+<body class = 'flex mx-6 min-h-screen'>
     
     
-    <main class = 'mx-auto bg-indigo-400 h-3/4 rounded-md p-1'>
-        <h1 class = 'text-amber-400'>Welcome to Your Dream Journal</h1>
-        <% if(authentic){ %>
-            <a class = 'text-amber-400 underline' href = '/logout'>logout</a>
-            <a class = 'text-amber-400 underline' href = '/home'>home</a>
+    <main class = 'mx-auto bg-indigo-400 h-full h-screen rounded-lg md:w-5/6 lg:w-3/4 w-full my-auto opacity-80 flex flex-col overflow-y-auto'>
+        <div class='flex w-full justify-between border-b-1 border-b-indigo-600 h-36 items-center'>
+            <div class='flex flex-col pl-5 w-14 h-16'>
+                <div class='flex justify-end'>
+                    <span>Z</span>
+                </div>
+                <div class='flex justify-center'>
+                    <span class='text-sm'>Z</span>
+                </div>
+                <div class='flex justify-start'>
+                    <span class='text-xs'>z</span>
+                </div>
+                
+            </div>
+            <% if(authentic){ %>
+                <nav class='flex justify-around w-56 md:w-72 pr-4'>
+                 
+                    
+                    <a class='text-amber-400 hover:underline md:text-xl' href='/'>Home</a>
+                    <a class='text-amber-400 hover:underline md:text-xl' href='/home'>Dashboard</a>
 
-            <% } else{ %>
-       <a class = 'text-amber-400 underline' href="/login">login</a>
-        <a class = 'text-amber-400 underline' href = '/signup'>Signup</a>
-        <a class = 'text-amber-400 underline' href = '/home'>home</a>
-        <% } %>
-        <div>
-      <h2>Additional Information & Resources</h2>
-            <a href = 'https://thecreativeindependent.com/guides/how-to-start-and-keep-a-dream-journal/' class = 'underline text-amber-400'>Dream Journaling Overview</a>
-            <a href = 'https://www.dreammoods.com/dreamdictionary/' class = 'underline text-amber-400'>Analysis of Common Dream Symbols</a>
-            <a class = 'underline text-amber-400' href = 'https://www.sleepfoundation.org/dreams/lucid-dreams'>Lucid Dreaming Overview and Techniques</a>
-            <a class = 'underline text-amber-400' href = 'https://www.reddit.com/r/LucidDreaming/'>Reddit's Lucid Dreaming Community</a>
-    </div>
+                    <a class='text-amber-400 hover:underline md:text-xl' href='/logout'>Logout</a>
+                </nav>
+                <% } else{ %>
+
+                    <nav class='flex justify-around w-52 md:w-72 pr-4'>
+                        <a class='text-amber-400 md:text-xl hover:underline' href='/signup'>Signup</a>
+                        <a class='text-amber-400 md:text-xl hover:underline' href="/login">Login</a>
+                        <a class='text-amber-400 md:text-xl hover:underline' href='/info'>More Info</a>
+                    </nav>
+                    <% } %>
+        </div>
+
+        <section class='flex flex-col pt-8 pr-4 pl-4 sm:h-full overflow-y-auto items-center'>
+
+            <h1 class='text-amber-400 text-5xl pb-8 sm:pb-6'>Additional Information & Resources</h1>
+
+            <div class = 'flex flex-col justify-around items-center h-2/3 text-2xl'>
+            <a href = 'https://thecreativeindependent.com/guides/how-to-start-and-keep-a-dream-journal/' class = 'underline text-amber-400 hover:text-amber-200'>Dream Journaling Overview</a>
+            <a href = 'https://www.dreammoods.com/dreamdictionary/' class = 'underline text-amber-400 hover:text-amber-200'>Analysis of Common Dream Symbols</a>
+            <a class = 'underline text-amber-400 hover:text-amber-200' href = 'https://www.sleepfoundation.org/dreams/lucid-dreams'>Lucid Dreaming Overview and Techniques</a>
+            <a class = 'underline text-amber-400 hover:text-amber-200' href = 'https://www.reddit.com/r/LucidDreaming/'>Reddit's Lucid Dreaming Community</a>
+            <a class = 'underline text-amber-400 hover:text-amber-200' href = 'https://dreamtending.com/blog/how-to-be-more-creative/'>Using your Dreams as Creativity</a>
+            </div>
+        </section>
     </main>
     <script src = 'js/main.js'></script>
 </body>

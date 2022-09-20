@@ -38,7 +38,8 @@ module.exports = {
             //speaks to model using the req received from the main.js file
             await Journal.findByIdAndUpdate({_id: req.body.dreamIdFromJSFile},{
                 'dream':req.body.dream,
-                'completed':false
+                'completed':false,
+                'title':req.body.title
             })
             
             console.log('Dream Updated')

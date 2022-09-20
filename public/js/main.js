@@ -91,11 +91,13 @@ async function createDream(){
 }
 
 async function updateDreamById(){
-    const dreamId = this.parentNode.dataset.id
+    const dreamId = this.parentNode.parentNode.dataset.id
 
     //grab update text with quill gettext method
 
     const dreamText = quill.getText(0,)
+    const dreamTitleFromJSFile = document.querySelector('#title').value
+    
     
     try{
         const response = await fetch(`/journal/edit/${dreamId}/update`, {
@@ -103,7 +105,8 @@ async function updateDreamById(){
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
                 'dreamIdFromJSFile':dreamId,
-                'dream':dreamText
+                'dream':dreamText,
+                'title':dreamTitleFromJSFile
             })
         })
         const data = await response.json()

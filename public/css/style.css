@@ -9,3 +9,21 @@ body{
   background-size: cover;
   background-position: center;
   }
+
+
+  li{
+    color: rgb(251 191 36);
+    text-decoration: underline;
+    font-size: 18px;
+  }
+
+  .active {
+    color: black
+    ;
+    text-decoration: none;
+  }
+  .disabled{
+    color: black
+    ;
+    text-decoration: none;
+  }

@@ -697,6 +697,14 @@ video {
   width: 12rem;
 }
 
+.w-28 {
+  width: 7rem;
+}
+
+.w-1\/2 {
+  width: 50%;
+}
+
 .max-w-fit {
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
@@ -912,6 +920,10 @@ body{
 
   .sm\:h-full {
     height: 100%;
+  }
+
+  .sm\:h-16 {
+    height: 4rem;
   }
 
   .sm\:w-1\/2 {

@@ -7,27 +7,60 @@
     <link href = "/css/dist/output.css" rel = 'stylesheet'>
     <title>Dream Journal</title>
 </head>
-<body class = 'p-5 h-screen'>
+<body class = 'flex mx-6 min-h-screen'>
     
     
-    <main class = 'mx-auto bg-indigo-400 h-3/4 rounded-md p-1'>
-        <a href = '/logout'>Log Out</a>
-        <h1 class = 'text-amber-400'>Welcome to the Dream Journal</h1>
+    <main class = 'mx-auto bg-indigo-400 h-full h-screen rounded-lg md:w-5/6 lg:w-3/4 w-full my-auto opacity-80 flex flex-col overflow-y-auto'>
+        <div class='flex w-full justify-between border-b-1 border-b-indigo-600 h-36 items-center'>
+            <div class='flex flex-col pl-5 w-14 h-16'>
+                <div class='flex justify-end'>
+                    <span>Z</span>
+                </div>
+                <div class='flex justify-center'>
+                    <span class='text-sm'>Z</span>
+                </div>
+                <div class='flex justify-start'>
+                    <span class='text-xs'>z</span>
+                </div>
+                
+            </div>
+            
+            <nav class='flex justify-around w-56 md:w-60 pr-4'>
+                
+                <a class='text-amber-400 hover:underline md:text-xl' href='/'>Home</a>
+  
+                <a class='text-amber-400 hover:underline md:text-xl' href='/info'>Info</a>
+                <a class='text-amber-400 hover:underline md:text-xl' href='/logout'>Logout</a>
+            </nav>
+            </div>
+ 
        
-        
-        <div>
+            <section class='flex flex-col pt-8 pr-4 pl-4 h-full overflow-y-auto items-center'>
+
+                <h1 class = 'text-amber-400 text-5xl mb-14 mt-8'>Dream Viewer</h2>
+
+
+        <div class = 'flex flex-col items-center'>
 
             <% %>
-                <h2>View Dream:</h2>
-               <p class='dream' data-id='<%=dreams._id%>'>
-                <span><%= dreams.date %></span>
-                   <span><%= dreams.dream %></span>
-                   <span class='del text-amber-400'> Delete </span>
-                   <a href = '/journal/edit/<%=dreams._id%>'class = 'edit text-amber-400'>Edit</a>
-                   
+                <h2 class = 'text-3xl mb-10'>Viewing Dream from   <span class = 'text-amber-400'><%= dreams.date %></span></h2>
+                <div class='dream flex flex-col items-center' data-id='<%=dreams._id%>'>
+                   <!--checking for title-->
+                    <% if(dreams.title){ %>
+                    <h3 class = 'text-amber-400 mb-5 text-3xl'>Title: <%= dreams.title %></h3> 
+                    <% } %>
+                    <div class = 'border-2 border-indigo-600 p-6 w-full sm:w-3/4 h-full overflow-y-auto mx-auto'>
+                        <span class = 'text-2xl'><%= dreams.dream %></span>
+                    </div>
+                    <div>
+                        <button class='del bg-amber-400 mt-8 w-28 rounded-lg mx-auto h-10 sm:h-16 hover:bg-amber-200 hover:cursor-pointer'> Delete </button>
+                        <a href = '/journal/edit/<%=dreams._id%>'class = 'edit bg-amber-400 mt-8 w-28 rounded-lg mx-auto h-10 sm:h-16 hover:bg-amber-200 hover:cursor-pointer'>Edit</a>
+                   </div>
                  
-               </p>
+               </div>
            <%  %>  
+        </div>
+        </section>
           
     </main>
     <script src = '/js/main.js'></script>

@@ -663,6 +663,12 @@ video {
   height: 2rem;
 }
 
+.h-fit {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .w-fit {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -932,6 +938,10 @@ body{
 
   .sm\:w-5\/6 {
     width: 83.333333%;
+  }
+
+  .sm\:w-3\/4 {
+    width: 75%;
   }
 
   .sm\:flex-row {

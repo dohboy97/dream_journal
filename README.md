@@ -1,5 +1,6 @@
 A CRUD application for individuals to easily track their dreams. Indivuals can create an account and then log a dream daily. They can edit or delete their dreams should they wish.
-[Screencast from 09-20-2022 07:16:32 PM.webm](https://user-images.githubusercontent.com/92645318/191381321-a9670054-055f-4374-9c8d-b161f443d3bc.webm)
+
+https://dream-journalll.herokuapp.com/
 
 There is a paginated viewing page strictly for viewing dreams, descending from most recently submitted.
 

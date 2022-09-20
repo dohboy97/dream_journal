@@ -20,3 +20,4 @@ Has user authentication, done with passport.js middleware.
 Server hosted on Heroku.
 
 Images courtesy of unsplashed and Lofi Raccoon. 
+![DreamJournal](https://user-images.githubusercontent.com/92645318/191381628-d9ff4e36-9287-48e9-941a-c750a4310729.png)
